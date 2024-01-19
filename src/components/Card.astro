@@ -1,0 +1,136 @@
+---
+interface Props {
+	title: string;
+	desc: string;
+	langs: Array<{name:string,svg:string}>;
+	image: string;
+	source: string;
+	live?: string;
+}
+
+const { title, desc, langs, image, source, live } = Astro.props;
+---
+
+<article>
+	<h1>
+		{title}
+	</h1>
+	<p>
+		{desc}
+	</p>
+	<div>
+		{langs.map(lang => (
+		  <span>
+			<img src=`/${lang.svg}` alt={lang.name}>
+			{lang.name}
+		  </span>
+		))}
+	</div>
+	  
+	<img src=`/${image}` alt={title} style="margin: 50px 0 35px 0 ;">
+
+	<section>
+		{source && <a href={source} style="color: lightseagreen;">
+			<img src="/Github.svg" alt="Source">
+			<p>source</p>
+			</a>
+		}
+		{live ? (
+			<a style="color:limegreen;" href={live}>
+				<img src="/live.svg" alt="live">
+				<p>Live</p>
+			</a>
+		) : (
+			<a style={{ color: 'red' }}><p>No live</p></a>
+		)}
+	</section>
+
+</article>
+
+<style>
+	article{
+		width: 95%;
+		height: inherit;
+		position: relative;
+		margin: 80px auto;
+		color: aliceblue;
+		// background-color: aqua;
+		overflow: hidden;
+	}
+	h1{
+		color: rgb(254 240 138 );
+		font-weight: 600;
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+	p{
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+		text-wrap: pretty;
+	}
+	img{ 
+		position: inherit;
+		max-width: 80%;
+		max-height: 350px;
+		margin: ;
+		left: 50%;
+		transform: translate(-50%);
+		box-shadow: 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgb(255 255 255 / .1);;
+	}
+	div{
+		width: 100%;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	span{
+		display: flex;
+		align-items: center;
+		border-radius: 999999px;
+		border: 1px solid #ccc;
+		padding: 2px 13px;
+	}
+	span img{
+		width: 20px;
+		height: 20px;
+		padding: 3px;
+		object-fit: cover;
+	}
+	section{
+		display: flex;
+		gap: 10px;
+	}
+	section a{
+		padding-inline-start: 13px;
+		background-color: #ffffff0d;
+		background-origin: top;
+		display: flex;
+		align-items: center;
+		border-radius: 999999px;
+		border: 1px solid #ccc;
+		padding: 2px 13px;
+		margin: 7px;
+		transition: scale .2s ease;
+	}
+	section a:hover{
+		scale: 1.1;
+	}
+	section a p{
+		margin-right: 15px;
+	}
+	section img{
+		width: 35px;
+		height: 35px;
+		margin-left: 10px;
+	}
+	@media (width < 850px) {
+		img{
+			max-width: 90%;
+			max-height: 400px;
+		}
+		span{
+			gap: 0;
+		}
+	}
+</style>
