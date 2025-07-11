@@ -1,0 +1,500 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Experience from "../components/Experience.astro";
+import Card from "../components/Card.astro";
+import Skills from "../components/Skills.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Ys4 | Portfolio">
+	<div class="scroll"></div>
+	<div class="bg">
+		<a class="up" href="#Main" aria-label="Scroll to top">
+			<svg
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2.5"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="icon-up"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M5 15l7-7 7 7"></path>
+			</svg>
+		</a>
+
+		<Nav />
+		<main id="Main">
+			<section class="Me">
+				<img src="/Me.webp" alt="YourS4nty" />
+				<div>
+					<h1 style="color: #ffffff;">
+						Hi, I'm <span style="color: #61dafb;">Santiago</span
+						><span style="color: #d523f5;"> González</span>
+					</h1>
+					<p style="color: #cccccc;">
+						Web developer from <span style="color: #fca311;"
+							>Colombia</span
+						> with 4+ years of experience.
+						<span style="color: #00b894;">Backend-focused</span>,
+						currently working on <span style="color: #ff7675;"
+							>Java plugins</span
+						> and
+						<span style="color: #74b9ff;">custom minigames</span>.
+					</p>
+
+					<section>
+						<a
+							href="https://github.com/YourS4nty"
+							class="social-button"
+						>
+							<svg
+								fill="currentColor"
+								xmlns="http://www.w3.org/2000/svg"
+								preserveAspectRatio="xMidYMid"
+								viewBox="0 0 256 250"
+								><path
+									d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z"
+								></path></svg
+							> Go Github
+						</a>
+						<a
+							href="https://instagram.com/YourS4nty"
+							class="social-button"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="currentColor"
+								><path
+									d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+								></path></svg
+							> Go Instagram
+						</a>
+					</section>
+				</div>
+			</section>
+		</main>
+	</div>
+
+	<div id="Experience" style="scroll-margin-top: 15vh;">
+		<Experience />
+	</div>
+
+	<section class="Projects" id="Projects">
+		<div class="complement" id="Projectsx"></div>
+		<h2>
+			<svg
+				viewBox="0 0 24 24"
+				stroke-width="2"
+				stroke="currentColor"
+				fill="none"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+					d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"
+				></path><path d="M14 4l-4 16"></path></svg
+			>
+			Projects
+		</h2>
+		<Card
+			title="NoteGuard"
+			desc="A web application for note-taking developed in Node.js and Express, Using Firebase as the database and EJS for views. Noteworthy for the ability to assign passwords to notes, providing users with security and privacy when storing and managing their data, accessible from any Internet-connected device."
+			langs={[
+				{ name: "Nodejs", svg: "langs/nodejs.svg" },
+				{ name: "JavaScript & Ejs", svg: "langs/js.svg" },
+			]}
+			image="NoteGuard.webp"
+			source="https://Github.com/YourS4nty/NoteGuard"
+			live="https://noteguard.vercel.app"
+		/>
+		<Card
+			title="Rest Api"
+			desc="Designed and implemented a basic RESTful API using Node.js and Express, showcasing my proficiency in server-side solutions, efficient endpoint management, and handling HTTP requests. This project serves as a foundation for scalable and responsive web applications, highlighting my backend development skills with Node.js and Express."
+			langs={[
+				{ name: "HTML", svg: "langs/html.svg" },
+				{ name: "CSS", svg: "langs/css.svg" },
+				{ name: "NodeJs", svg: "langs/nodejs.svg" },
+			]}
+			image="Api.webp"
+			source="https://github.com/YourS4nty/Ys4Api"
+			live="https://ys4-api.vercel.app/"
+		/>
+		<Card
+			title="Lornychi — Streamer & Vtuber Portfolio"
+			desc="A custom portfolio website for Lornychi, a streamer, Vtuber, and illustrator from Honduras. Built to showcase her artwork, stream schedule, and social media in a dynamic and kawaii-themed design. Features include an animated avatar, FAQ, weekly schedule, random art gallery, and responsive layout optimized for community engagement."
+			langs={[
+				{ name: "Astro", svg: "langs/astro.svg" },
+				{ name: "Html", svg: "langs/html.svg" },
+				{ name: "CSS", svg: "langs/css.svg" },
+			]}
+			image="Lorny.webp"
+			source="https://github.com/YourS4nty/Lorny-s-Web"
+			live="https://lornychi.vercel.app/"
+		/>
+		<Card
+			title="Sudoku Solver"
+			desc="Implemented a Sudoku solver algorithm with HTML, CSS, and native JavaScript. This project demonstrates my proficiency in algorithmic problem-solving and web application development. Users can experience the efficiency of the Sudoku solver, showcasing my skills in logic and front-end implementation using core web technologies."
+			langs={[
+				{ name: "HTML", svg: "langs/html.svg" },
+				{ name: "CSS", svg: "langs/css.svg" },
+				{ name: "JS", svg: "langs/js.svg" },
+			]}
+			image="Sudoku.webp"
+			source="https://github.com/YourS4nty/SudokuSolver"
+			live="https://sudoku-solver-black.vercel.app/"
+		/>
+		<Card
+			title="Ai Game (Basic)"
+			desc="Created a Rock, Paper, Scissors game using native JavaScript with a simulated AI opponent. This project demonstrates my proficiency in developing interactive web applications, incorporating game mechanics and basic AI concepts. Enjoy the classic challenge in a user-friendly interface, showcasing my front-end development and game logic skills."
+			langs={[
+				{ name: "HTML", svg: "langs/html.svg" },
+				{ name: "CSS", svg: "langs/css.svg" },
+				{ name: "JS", svg: "langs/js.svg" },
+			]}
+			image="aigame.webp"
+			source="https://github.com/YourS4nty/Ai-Game"
+			live="https://ai-game-eta.vercel.app/"
+		/>
+		<Card
+			title="Apptesanos (Web/Mobile App)"
+			desc="Collaborated on an Ionic Vue mobile app with the 'Universidad de Cundinamarca' to optimize agricultural supply management through Firebase. My role focused on collaborative development and the implementation of sustainable agriculture technology solutions."
+			langs={[
+				{ name: "Ionic", svg: "langs/ionic.svg" },
+				{ name: "VueJs", svg: "langs/vue.svg" },
+			]}
+			image="Apptesanos.webp"
+			source="https://Github.com/YourS4nty/ApptesanosApp"
+		/>
+		<Card
+			title="PokeDex"
+			desc="Designed and implemented a Pokedex with HTML, CSS, and native JavaScript, utilizing the PokeAPI. This project highlights my expertise in front-end technologies, API integration, and creating engaging web applications with real-world data. Explore the Pokemon world seamlessly with this user-friendly Pokedex."
+			langs={[
+				{ name: "HTML", svg: "langs/html.svg" },
+				{ name: "CSS", svg: "langs/css.svg" },
+				{ name: "JS", svg: "langs/js.svg" },
+			]}
+			image="pokedex.webp"
+			source="https://github.com/YourS4nty/PokeDex"
+			live="https://ys4pokedex.vercel.app/"
+		/>
+		<Card
+			title="Ph Logo - Maker"
+			desc="Developed an image generator inspired by the layout of the P*rnHub logo using HTML, CSS, and native JavaScript. This project showcases my creativity in web design and front-end development, blending visual elements and interactivity for a unique and engaging user experience."
+			langs={[
+				{ name: "HTML", svg: "langs/html.svg" },
+				{ name: "CSS", svg: "langs/css.svg" },
+				{ name: "JS", svg: "langs/js.svg" },
+			]}
+			image="ph.webp"
+			source="https://github.com/YourS4nty/PH-LogoMaker"
+			live="https://ph-maker.vercel.app/"
+		/>
+		<div id="vmore">
+			<button id="btnx">
+				<span>Mostrar más proyectos</span>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M19 9l-7 7-7-7"></path>
+				</svg>
+			</button>
+		</div>
+	</section>
+
+	<div id="Skills" style="scroll-margin-top: 15vh;">
+		<Skills />
+	</div>
+
+	<hr
+		style="border-color: #ffffff67;width: 80%;box-shadow: 0px 0px 7px #fff;margin: auto;"
+	/>
+
+	<div id="AboutMe" style="scroll-margin-top: 15vh;">
+		<Footer />
+	</div>
+
+	<script>
+		function viewMore() {
+			const content = document.getElementById("Projects");
+			content.style.maxHeight = "none";
+
+			const viewMore = document.getElementById("vmore");
+			viewMore.style.opacity = "0";
+			setTimeout(() => {
+				viewMore.style.display = "none";
+			}, 500);
+		}
+		const button = document.getElementById("btnx");
+
+		// Handle clicks on each button.
+		button.addEventListener("click", () => {
+			//alert("Button was clicked!");
+			viewMore();
+		});
+	</script>
+
+	<style>
+		.up {
+			position: fixed;
+			bottom: 2.5%;
+			right: 2.5%;
+			width: 55px;
+			height: 55px;
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.15);
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 99999;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+			transition: all 0.3s ease;
+			animation: floatUpDown 2s ease-in-out infinite;
+		}
+
+		.up:hover {
+			transform: scale(1.1) translateY(-3px);
+			box-shadow: 0 6px 15px rgba(127, 90, 240, 0.6);
+		}
+
+		.icon-up {
+			width: 28px;
+			height: 28px;
+			color: #7f5af0;
+			transition: color 0.3s ease;
+		}
+
+		.up:hover .icon-up {
+			color: #caaaff;
+		}
+
+		@keyframes floatUpDown {
+			0%,
+			100% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(-10px);
+			}
+		}
+
+		main {
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+		}
+		p {
+			text-wrap: wrap;
+		}
+		.Me {
+			width: 60%;
+			height: 70%;
+			margin: auto;
+			display: flex;
+			color: aliceblue;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+			font-size: 25px;
+			gap: 10%;
+		}
+		.Me img {
+			object-fit: cover;
+			object-position: 50% 30%;
+			width: 280px;
+			height: 280px;
+			border-radius: 20%;
+			image-rendering: pixelated;
+			background-color: #1a1a1a;
+			border: 2px solid #5f5f5f;
+			box-shadow: 0 0 20px rgba(100, 10, 250, 0.5);
+			transition: transform 0.5s ease;
+		}
+		.Me img:hover {
+			transform: scale(1.05);
+			box-shadow: 0 0 30px rgba(127, 90, 240, 0.7);
+		}
+		.Me div {
+			width: 50%;
+		}
+		.social-button {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			margin: 10px 5px;
+			background-color: #20202048;
+			color: #ccc;
+			border: 1px solid #444;
+			border-radius: 999px;
+			padding: 8px 16px;
+			font-size: 0.95rem;
+			transition: all 0.3s ease;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+		}
+
+		.social-button:hover {
+			background-color: #333;
+			color: white;
+			transform: translateY(-2px);
+		}
+
+		.social-button svg {
+			width: 20px;
+			height: 20px;
+		}
+
+		#Experience {
+			/* margin-bottom: 10000px; */
+		}
+		.Projects {
+			width: 50%;
+			max-height: 2000px;
+			margin: 100px auto;
+			overflow: hidden;
+			position: relative;
+		}
+		.complement {
+			scroll-margin-top: 100px;
+		}
+		#vmore {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: auto;
+			padding: 40px 0;
+			background: linear-gradient(
+				to top,
+				rgba(30, 4, 22, 0.804),
+				transparent 100%
+			);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: opacity 0.5s ease-in-out;
+			z-index: 10;
+			border-radius: 5px;
+		}
+
+		#vmore button {
+			background: #6545c4;
+			color: white;
+			padding: 12px 24px;
+			border: none;
+			border-radius: 999px;
+			font-weight: 600;
+			text-transform: uppercase;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			box-shadow: 0 4px 12px rgba(127, 90, 240, 0.4);
+			transition: all 0.3s ease;
+			cursor: pointer;
+		}
+
+		#vmore button:hover {
+			background: #6f5aba;
+			transform: scale(1.05);
+		}
+
+		#vmore button svg {
+			width: 20px;
+			height: 20px;
+			stroke: white;
+			transition: transform 0.3s ease;
+		}
+
+		#vmore button:hover svg {
+			transform: translateY(3px);
+		}
+
+		.Projects h2 {
+			font-size: 1.875rem;
+			line-height: 2.25rem;
+			font-weight: 600;
+			color: #ffc;
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+		}
+		.Projects h2 svg {
+			width: 1.75rem;
+			height: 1.75rem;
+		}
+		.bg {
+			width: 100%;
+			height: 110vh;
+			background-color: rgb(10, 10, 10);
+			background-image: radial-gradient(
+				ellipse 80% 80% at 50% -20%,
+				#7877c64d,
+				#fff0
+			);
+			background-size: cover;
+			background-repeat: no-repeat;
+			z-index: -99999;
+		}
+		.scroll {
+			width: 7px;
+			background: linear-gradient(to top, #7f5af0, transparent);
+			border-radius: 0 0 10px 10px;
+			position: fixed;
+			top: 0;
+			right: 0;
+			animation: scrolling auto linear;
+			animation-timeline: scroll(root block);
+		}
+
+		@keyframes scrolling {
+			from {
+				height: 0%;
+			}
+
+			to {
+				height: 100%;
+			}
+		}
+
+		@media (max-width: 850px) {
+			.bg {
+				height: 120vh;
+			}
+			.Me {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				font-size: clamp(1.2rem, 2.5vw, 2rem);
+			}
+			.Me a {
+				margin: 10px 10px;
+			}
+			.Me div {
+				width: 90%;
+				height: auto;
+				padding: 3%;
+			}
+			.Me img {
+				width: 200px;
+				height: 200px;
+			}
+			#Projects {
+				width: 95%;
+			}
+		}
+	</style>
+</Layout>

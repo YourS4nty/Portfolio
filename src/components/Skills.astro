@@ -1,0 +1,143 @@
+<article>
+  <header>Tools & Technologies</header>
+
+  <div class="skills">
+    <section class="languages">
+      <h2>Languages</h2>
+      <div class="icons">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" aria-label="HTML">
+          <img src="/Html.svg" alt="HTML" loading="lazy" />
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" aria-label="CSS">
+          <img src="/Css.svg" alt="CSS" loading="lazy" />
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" aria-label="JavaScript">
+          <img src="/Js.svg" alt="JavaScript" loading="lazy" />
+        </a>
+        <a href="https://www.python.org/" target="_blank" aria-label="Python">
+          <img src="/Python.svg" alt="Python" loading="lazy" />
+        </a>
+        <a href="https://www.java.com/" target="_blank" aria-label="Java">
+          <img src="/Java.svg" alt="Java" loading="lazy" />
+        </a>
+      </div>
+    </section>
+
+    <section class="frameworks">
+      <h2>Frameworks</h2>
+      <div class="icons">
+        <a href="https://react.dev/" target="_blank" aria-label="React">
+          <img src="/React.svg" alt="React" loading="lazy" />
+        </a>
+        <a href="https://vuejs.org/" target="_blank" aria-label="Vue">
+          <img src="/Vue.svg" alt="Vue" loading="lazy" />
+        </a>
+        <a href="https://astro.build/" target="_blank" aria-label="Astro">
+          <img src="/Astro.svg" alt="Astro" loading="lazy" />
+        </a>
+        <a href="https://tailwindcss.com/" target="_blank" aria-label="Tailwind CSS">
+          <img src="/Tailwind.svg" alt="Tailwind CSS" loading="lazy" />
+        </a>
+      </div>
+    </section>
+
+    <section class="tools">
+      <h2>Tools & Environments</h2>
+      <div class="icons">
+        <a href="https://nodejs.org/" target="_blank" aria-label="Node.js">
+          <img src="/Node.svg" alt="Node.js" loading="lazy" />
+        </a>
+        <a href="https://ionicframework.com/" target="_blank" aria-label="Ionic">
+          <img src="/Ionic.svg" alt="Ionic" loading="lazy" />
+        </a>
+        <a href="https://code.visualstudio.com/" target="_blank" aria-label="VSCode">
+          <img src="/Vscode.svg" alt="VSCode" loading="lazy" />
+        </a>
+        <a href="https://github.com/" target="_blank" aria-label="GitHub">
+          <img src="/Github.svg" alt="GitHub" loading="lazy" />
+        </a>
+        <a href="https://ubuntu.com/" target="_blank" aria-label="Linux">
+          <img src="/Linux.svg" alt="Linux" loading="lazy" />
+        </a>
+      </div>
+    </section>
+  </div>
+</article>
+
+<style>
+  article {
+    width: 90%;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  article header {
+    color: rgb(254 240 138);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-areas:
+      "languages frameworks"
+      "tools tools";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    width: 100%;
+  }
+
+  .languages {
+    grid-area: languages;
+  }
+
+  .frameworks {
+    grid-area: frameworks;
+  }
+
+  .tools {
+    grid-area: tools;
+  }
+
+  section h2 {
+    color: #bae6fdcc;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .icons img {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+  }
+
+  .icons img:hover {
+    transform: scale(1.15);
+    filter: brightness(1.1) saturate(1.2);
+  }
+
+  @media (max-width: 850px) {
+    article header {
+      font-size: 2rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+</style>

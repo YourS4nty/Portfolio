@@ -1,0 +1,180 @@
+<footer>
+  <div class="about">
+    <h2>About <span class="highlight-blue">Me</span></h2>
+    <p>
+      I'm <span class="highlight-name">Santiago González</span>, a
+      <span class="highlight-dev">backend-focused developer</span> from Colombia
+      with over 4 years of experience crafting full-stack solutions. I specialize
+      in building scalable tools using <span class="highlight-html">HTML</span>, <span
+        class="highlight-css">CSS</span
+      >, <span class="highlight-js">JavaScript</span>, <span
+        class="highlight-vue">Vue.js</span
+      > and <span class="highlight-express">Express.js</span>, often integrating
+      game logic, APIs, and custom plugins.
+    </p>
+    <p>
+      I enjoy solving problems through code—whether it’s a minigame, a utility,
+      or an entire app. I'm constantly exploring <span class="highlight-keyword"
+        >new technologies</span
+      >, and I bring that same curiosity to my hobbies: <span
+        class="highlight-keyword">photography</span
+      >, <span class="highlight-keyword">music</span>, and <span
+        class="highlight-keyword">gaming</span
+      >.
+    </p>
+  </div>
+
+  <div class="contact">
+    <h2>Contact</h2>
+    <p>Let’s connect — I’m active on:</p>
+    <div class="social-icons">
+      <a
+        href="https://instagram.com/YourS4nty"
+        target="_blank"
+        aria-label="Instagram"
+      >
+        <img src="/insta.svg" alt="Instagram" />
+      </a>
+      <a
+        href="https://github.com/YourS4nty"
+        target="_blank"
+        aria-label="GitHub"
+      >
+        <img src="/Github.svg" alt="GitHub" />
+      </a>
+      <a
+        href="https://codepen.com/YourS4nty"
+        target="_blank"
+        aria-label="Codepen"
+      >
+        <img src="/codepen.svg" alt="Twitter / X" />
+      </a>
+            <a
+        href="https://steamcommunity.com/id/YourS4nty/"
+        target="_blank"
+        aria-label="Codepen"
+      >
+        <img src="/steam.svg" alt="Twitter / X" />
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    width: 85%;
+    margin: 5rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: aliceblue;
+    gap: 5rem;
+  }
+
+  .about,
+  .contact {
+    flex: 1 1 300px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: rgb(254 240 138);
+    margin-bottom: 1rem;
+  }
+
+  .highlight-blue {
+    color: #7dd3fc;
+  }
+
+  .highlight-name {
+    color: #60caed;
+    font-weight: 600;
+  }
+
+  .highlight-dev {
+    color: #a5f3fc;
+    font-style: italic;
+  }
+
+  .highlight-html {
+    color: #ef6629;
+  }
+
+  .highlight-css {
+    color: #60a5fa;
+  }
+
+  .highlight-js {
+    color: #facc15;
+  }
+
+  .highlight-vue {
+    color: #4ade80;
+  }
+
+  .highlight-express {
+    color: #ffffffcc;
+  }
+
+  .highlight-keyword {
+    color: #c084fc;
+  }
+
+  .about p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact p {
+    margin: 1rem 0;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-icons img {
+    width: 45px;
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease;
+    cursor: pointer;
+  }
+
+  .social-icons img:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2) saturate(1.5);
+  }
+
+  @media (max-width: 850px) {
+    footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 2rem auto;
+    }
+
+    .contact {
+      width: 100%;
+      max-height: 150px;
+      /* background-color: #60a5fa; */
+    }
+
+    .about p {
+      text-align: start;
+    }
+
+    .social-icons {
+      justify-content: center;
+    }
+  }
+</style>

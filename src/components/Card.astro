@@ -1,0 +1,167 @@
+---
+interface Props {
+	title: string;
+	desc: string;
+	langs: Array<{ name: string; svg: string }>;
+	image: string;
+	source: string;
+	live?: string;
+}
+
+const { title, desc, langs, image, source, live } = Astro.props;
+---
+
+<article>
+	<h1>{title}</h1>
+	<p>{desc}</p>
+
+	<div class="tech-list">
+		{langs.map(lang => (
+			<span class="lang">
+				<img src={`/${lang.svg}`} alt={lang.name} />
+				{lang.name}
+			</span>
+		))}
+	</div>
+
+	<img class="preview" src={`/${image}`} alt={title} />
+
+	<section class="links">
+		<a class="btn source" href={source} target="_blank">
+			<img src="/Github.svg" alt="GitHub" />
+			<span>Source</span>
+		</a>
+
+		{live ? (
+			<a class="btn live" href={live} target="_blank">
+				<img src="/live.svg" alt="Live" />
+				<span>Live</span>
+			</a>
+		) : (
+			<span class="btn no-live"><span>No Live</span></span>
+		)}
+	</section>
+</article>
+
+<style>
+	article {
+		width: 95%;
+		margin: 80px auto;
+		color: aliceblue;
+		position: relative;
+	}
+
+	h1 {
+		position: relative;
+		color: rgb(254 240 138);
+		font-size: 1.75rem;
+		font-weight: 600;
+		margin-bottom: 12px;
+		padding-left: 20px;
+		display: flex;
+		align-items: center;
+	}
+
+	h1::before {
+		content: "";
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: rgb(254 240 138 / 90%);
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	p {
+		font-size: 1.1rem;
+		line-height: 1.6rem;
+		margin-bottom: 25px;
+		color: #dcdcdc;
+	}
+
+	.tech-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		margin-bottom: 30px;
+	}
+
+	.lang {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		padding: 5px 12px;
+		border-radius: 9999px;
+		background: rgba(255, 255, 255, 0.08);
+		font-size: 0.85rem;
+		color: #ddd;
+		backdrop-filter: blur(4px);
+		line-height: 1;
+	}
+
+	.lang img {
+		width: 16px;
+		height: 16px;
+		object-fit: contain;
+	}
+
+	.preview {
+		display: block;
+		margin: 40px auto 25px auto;
+		max-width: 100%;
+		max-height: 350px;
+		border-radius: 12px;
+		box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+	}
+
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		margin-top: 10px;
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		padding: 10px 20px;
+		border-radius: 9999px;
+		font-size: 1rem;
+		font-weight: 500;
+		text-decoration: none;
+		background: rgba(255, 255, 255, 0.06);
+		color: white;
+		backdrop-filter: blur(6px);
+		transition: all 0.2s ease;
+		line-height: 1;
+	}
+
+	.btn img {
+		width: 20px;
+		height: 20px;
+	}
+
+	.btn:hover {
+		transform: scale(1.05);
+		background: rgba(255, 255, 255, 0.1);
+	}
+
+	.source {
+		color: lightseagreen;
+	}
+
+	.live {
+		color: limegreen;
+	}
+
+	.no-live {
+		color: crimson;
+		opacity: 0.5;
+		cursor: default;
+		pointer-events: none;
+		background: rgba(255, 255, 255, 0.03);
+	}
+</style>
