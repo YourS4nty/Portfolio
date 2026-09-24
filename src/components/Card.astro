@@ -35,7 +35,7 @@ const projectDetails: Record<string, ProjectDetails> = {
 		],
 		image: "Apptesanos.webp",
 		source: "https://github.com/YourS4nty/ApptesanosApp",
-		priority: 1,
+		priority: 3,
 		featured: true,
 		live: "https://www.figma.com/file/hWhEkKPH2we11pcrYfhyFH/Apptesanos?type=design&node-id=0-1&mode=design",
 		liveLabel: "Figma",
@@ -62,7 +62,7 @@ const projectDetails: Record<string, ProjectDetails> = {
 		],
 		image: "NoteGuard.webp",
 		source: "https://github.com/YourS4nty/NoteGuard",
-		priority: 3,
+		priority: 1,
 		featured: true,
 	},
 	"Rest Api": {
@@ -128,20 +128,11 @@ const displaySource = details?.source ?? source;
 const displayLive = details?.live ?? live;
 const liveLabel = details?.liveLabel ?? "Live";
 const priority = details?.priority ?? 99;
-const originalOrder: Record<string, number> = {
-	NoteGuard: 0,
-	"Rest Api": 1,
-	"Lornychi — Streamer & Vtuber Portfolio": 2,
-	"Sudoku Solver": 3,
-	"Ai Game (Basic)": 4,
-	"Apptesanos (Web/Mobile App)": 5,
-	PokeDex: 6,
-};
-const order = originalOrder[title] ?? 99;
+const projectKey = title;
 ---
 
-<article class:list={{ "featured-project": details?.featured }} class="project-card" data-project-priority={priority} data-project-order={order}>
-	{details?.featured && <span class="featured-badge">Featured project</span>}
+<article class:list={{ "featured-project": details?.featured }} class="project-card" data-project-key={projectKey} data-project-priority={priority}>
+	{details?.featured && <span class="featured-badge" data-i18n="featuredProject">Featured project</span>}
 	<h1>{displayTitle}</h1>
 	<p>{displayDesc}</p>
 	<div class="tech-list">
@@ -167,14 +158,6 @@ const order = originalOrder[title] ?? 99;
 	const getContainer = () => document.querySelector("#Projects");
 	const getCards = () => Array.from(document.querySelectorAll<HTMLElement>("#Projects .project-card"));
 
-	const restoreOriginalOrder = () => {
-		const container = getContainer();
-		if (!container) return;
-		getCards()
-			.sort((a, b) => Number(a.dataset.projectOrder ?? 99) - Number(b.dataset.projectOrder ?? 99))
-			.forEach(card => container.appendChild(card));
-	};
-
 	const sortProjects = () => {
 		const container = getContainer();
 		if (!container) return;
@@ -183,23 +166,11 @@ const order = originalOrder[title] ?? 99;
 			.forEach(card => container.appendChild(card));
 	};
 
-	// Layout translates cards by their original DOM index. Always restore that
-	// stable order before translation, then restore the visual priority order.
-	const prepareForTranslation = () => {
-		restoreOriginalOrder();
-		setTimeout(sortProjects, 100);
-	};
-
 	if (document.readyState === "loading") {
-		document.addEventListener("DOMContentLoaded", prepareForTranslation, { once: true });
+		document.addEventListener("DOMContentLoaded", () => setTimeout(sortProjects, 150), { once: true });
 	} else {
-		prepareForTranslation();
+		setTimeout(sortProjects, 150);
 	}
-
-	document.addEventListener("click", event => {
-		const button = event.target instanceof Element ? event.target.closest(".lang-btn") : null;
-		if (button) prepareForTranslation();
-	});
 </script>
 
 <style>
