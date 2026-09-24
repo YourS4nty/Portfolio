@@ -10,9 +10,12 @@
     "astro": "astro"
   },
   "engines": {
-    "node": ">=22.12.0"
+    "node": "24.x"
   },
   "dependencies": {
     "astro": "^7.3.4"
+  },
+  "allowScripts": {
+    "esbuild": true
   }
 }
