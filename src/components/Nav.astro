@@ -76,16 +76,16 @@
         }
 
         .Me {
-            width: min(82%, 1180px);
-            height: 72%;
-            gap: clamp(48px, 6vw, 96px);
+            width: min(88%, 1280px);
+            height: 74%;
+            gap: clamp(56px, 7vw, 112px);
             justify-content: space-between;
             overflow: visible;
         }
 
         .Me img {
-            width: clamp(250px, 22vw, 310px);
-            height: clamp(250px, 22vw, 310px);
+            width: clamp(250px, 21vw, 310px);
+            height: clamp(250px, 21vw, 310px);
             flex: 0 0 auto;
         }
 
@@ -93,46 +93,69 @@
             width: auto;
             flex: 1 1 auto;
             min-width: 0;
-            max-width: 760px;
+            max-width: 780px;
         }
 
         .Me h1 {
-            margin: 0 0 18px;
-            font-size: clamp(2.45rem, 3.65vw, 3.65rem);
-            line-height: 1.08;
+            margin: 0 0 24px;
+            font-size: clamp(2.35rem, 3.25vw, 3.45rem);
+            line-height: 1.02;
             letter-spacing: -0.025em;
-            white-space: nowrap;
+            white-space: normal;
+        }
+
+        .Me h1 span {
+            display: inline-block;
+        }
+
+        .Me h1 span[style*="61dafb"] {
+            margin-left: 0.12em;
+        }
+
+        .Me h1 span[style*="d523f5"] {
+            display: block;
+            margin-top: 0.04em;
         }
 
         .eyebrow {
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
 
         .hero-copy {
-            max-width: 58ch;
-            line-height: 1.65;
+            max-width: 60ch;
+            line-height: 1.72;
             margin: 0;
         }
 
         .hero-actions {
-            margin-top: 26px;
-            gap: 10px;
+            margin-top: 30px;
+            gap: 12px;
         }
 
         .social-button {
-            margin: 4px 2px;
-            padding: 9px 17px;
+            margin: 3px 2px;
+            padding: 10px 18px;
         }
     }
 
     @media (min-width: 851px) and (max-width: 1050px) {
         .Me {
-            width: 88%;
-            gap: 40px;
+            width: 92%;
+            gap: 44px;
         }
 
         .Me h1 {
-            font-size: clamp(2.25rem, 3.7vw, 3rem);
+            font-size: clamp(2.15rem, 3.45vw, 2.85rem);
+            margin-bottom: 20px;
+        }
+
+        .hero-copy {
+            max-width: 54ch;
+            line-height: 1.62;
+        }
+
+        .hero-actions {
+            margin-top: 24px;
         }
     }
 </style>
