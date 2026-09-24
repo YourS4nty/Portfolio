@@ -11,7 +11,7 @@ interface Props {
 const { title, desc, langs, image, source, live } = Astro.props;
 ---
 
-<article>
+<article class="project-card">
 	<h1>{title}</h1>
 	<p>{desc}</p>
 
@@ -27,13 +27,13 @@ const { title, desc, langs, image, source, live } = Astro.props;
 	<img class="preview" src={`/${image}`} alt={title} />
 
 	<section class="links">
-		<a class="btn source" href={source} target="_blank">
+		<a class="btn source" href={source} target="_blank" rel="noreferrer">
 			<img src="/Github.svg" alt="GitHub" />
 			<span>Source</span>
 		</a>
 
 		{live ? (
-			<a class="btn live" href={live} target="_blank">
+			<a class="btn live" href={live} target="_blank" rel="noreferrer">
 				<img src="/live.svg" alt="Live" />
 				<span>Live</span>
 			</a>
@@ -45,8 +45,8 @@ const { title, desc, langs, image, source, live } = Astro.props;
 
 <style>
 	article {
-		width: 95%;
-		margin: 80px auto;
+		width: 100%;
+		margin: 54px auto;\n\t\tpadding: 24px;\n\t\tborder: 1px solid rgba(255,255,255,.07);\n\t\tborder-radius: 22px;\n\t\tbackground: rgba(255,255,255,.025);\n\t\tbox-shadow: 0 18px 55px rgba(0,0,0,.18);\n\t\tbackdrop-filter: blur(10px);\n\t\ttransition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
 		color: aliceblue;
 		position: relative;
 	}
@@ -165,3 +165,4 @@ const { title, desc, langs, image, source, live } = Astro.props;
 		background: rgba(255, 255, 255, 0.03);
 	}
 </style>
+\n<style>\n@media (max-width: 850px) { article { margin: 38px auto; padding: 18px; } }\n@media (prefers-reduced-motion: reduce) { .project-card, .btn { transition: none; } }\n</style>
