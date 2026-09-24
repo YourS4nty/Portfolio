@@ -570,35 +570,83 @@ import Footer from "../components/Footer.astro";
 \t\t}
 
 \t\t@media (max-width: 850px) {
+			main {
+				height: auto;
+				min-height: 100svh;
+				padding: 92px 0 42px;
+				box-sizing: border-box;
+			}
 			.bg {
-				height: 120vh;
+				height: auto;
+				min-height: 100svh;
 			}
 			.Me {
-				width: 100%;
-				height: 100%;
-				display: flex;
+				width: min(100%, 560px);
+				height: auto;
+				min-height: 0;
+				padding: 24px 18px 10px;
+				box-sizing: border-box;
 				flex-direction: column;
 				text-align: center;
-				font-size: clamp(1.2rem, 2.5vw, 2rem);
-			}
-			.Me a {
-				margin: 10px 10px;
-			}
-			.Me div {
-				width: 90%;
-				height: auto;
-				padding: 3%;
+				font-size: clamp(1rem, 4.2vw, 1.25rem);
+				gap: 18px;
+				overflow: visible;
 			}
 			.Me img {
-				width: 200px;
-				height: 200px;
+				width: clamp(150px, 42vw, 200px);
+				height: clamp(150px, 42vw, 200px);
+				flex: 0 0 auto;
 			}
-			.language-switcher { top: 66px; right: 10px; }
-\t\t\t.eyebrow { font-size: 0.7rem; }
-\t\t\t.hero-actions { justify-content: center; }
-\t\t	#Projects {
-				width: 95%;
-\t\t\t\tpadding: 22px 10px 4px;
+			.Me div {
+				width: 100%;
+				height: auto;
+				padding: 0;
+			}
+			.Me h1 {
+				font-size: clamp(2rem, 9vw, 2.8rem);
+				line-height: 1.08;
+				margin: 0 0 12px;
+			}
+			.hero-copy {
+				max-width: 42ch;
+				margin: 0 auto;
+				line-height: 1.65;
+			}
+			.eyebrow {
+				font-size: 0.68rem;
+				letter-spacing: 0.12em;
+				white-space: nowrap;
+			}
+			.hero-actions {
+				justify-content: center;
+				gap: 2px;
+				margin-top: 14px;
+			}
+			.social-button {
+				margin: 6px 3px;
+				padding: 8px 12px;
+				font-size: 0.86rem;
+			}
+			.language-switcher {
+				top: 64px;
+				right: 10px;
+			}
+			#Projects {
+				width: calc(100% - 20px);
+				box-sizing: border-box;
+				padding: 20px 10px 4px;
+				margin: 60px auto;
+				border-radius: 22px;
+			}
+			.Projects h2 {
+				font-size: 1.5rem;
+				line-height: 1.9rem;
+				padding: 0 6px;
+			}
+			#vmore button {
+				max-width: calc(100% - 24px);
+				padding: 10px 16px;
+				font-size: 0.78rem;
 			}
 		}
 	</style>
