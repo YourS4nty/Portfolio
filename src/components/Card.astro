@@ -2,7 +2,7 @@
 interface Props {
 	title: string;
 	desc: string;
-	langs: Array<{ name: string; svg: string }>;
+	langs: Array<{ name: string; svg?: string }>;
 	image: string;
 	source: string;
 	live?: string;
@@ -10,14 +10,16 @@ interface Props {
 
 const { title, desc, langs, image, source, live } = Astro.props;
 
-const projectDetails: Record<string, { title?: string; desc: string; langs?: Array<{ name: string; svg: string }>; image?: string; priority: number; featured?: boolean; live?: string; liveLabel?: string }> = {
+const projectDetails: Record<string, { title?: string; desc: string; langs?: Array<{ name: string; svg?: string }>; image?: string; priority: number; featured?: boolean; live?: string; liveLabel?: string }> = {
 	"Apptesanos (Web/Mobile App)": {
 		title: "Apptesanos — Agricultural Supply App",
 		desc: "Collaborative Ionic + Vue application developed with Universidad de Cundinamarca to improve agricultural supply management. The project includes authentication, profile and main-menu flows, sales administration, Firebase integration, image handling, and bug fixes across the app.",
 		langs: [
 			{ name: "Ionic", svg: "langs/ionic.svg" },
 			{ name: "Vue.js", svg: "langs/vue.svg" },
-			{ name: "Firebase", svg: "langs/firebase.svg" },
+			{ name: "Firebase" },
+			{ name: "Capacitor" },
+			{ name: "TypeScript" },
 		],
 		image: "Apptesanos.webp",
 		priority: 1,
@@ -29,6 +31,7 @@ const projectDetails: Record<string, { title?: string; desc: string; langs?: Arr
 		desc: "Custom portfolio website for Lornychi, a streamer, Vtuber, and illustrator from Honduras. Built with Astro to present her artwork, stream schedule, community links, FAQ, setup information, and a dynamic illustration gallery in a responsive visual experience.",
 		langs: [
 			{ name: "Astro", svg: "langs/astro.svg" },
+			{ name: "Tailwind CSS" },
 		],
 		image: "Lorny.webp",
 		priority: 2,
@@ -38,9 +41,10 @@ const projectDetails: Record<string, { title?: string; desc: string; langs?: Arr
 		desc: "Secure note-taking web application built with Node.js, Express, Firebase, and EJS. Users can create notes with optional password protection and expiration dates, combining a practical backend workflow with privacy-focused features and a deployed web interface.",
 		langs: [
 			{ name: "Node.js", svg: "langs/nodejs.svg" },
-			{ name: "Express", svg: "langs/nodejs.svg" },
-			{ name: "Firebase", svg: "langs/firebase.svg" },
+			{ name: "Express" },
+			{ name: "Firebase" },
 			{ name: "EJS", svg: "langs/js.svg" },
+			{ name: "node-cron" },
 		],
 		image: "NoteGuard.webp",
 		priority: 3,
@@ -51,8 +55,10 @@ const projectDetails: Record<string, { title?: string; desc: string; langs?: Arr
 		desc: "Backend API built with Node.js and Express that exposes reusable services for QR generation, binary encoding and decoding, password generation, UUIDs, credit-card validation, country data, and book information. A practical demonstration of endpoint design and external API integration.",
 		langs: [
 			{ name: "Node.js", svg: "langs/nodejs.svg" },
-			{ name: "Express", svg: "langs/nodejs.svg" },
-			{ name: "Axios", svg: "langs/js.svg" },
+			{ name: "Express" },
+			{ name: "Axios" },
+			{ name: "QRCode" },
+			{ name: "UUID" },
 		],
 		image: "Api.webp",
 		priority: 4,
@@ -74,6 +80,7 @@ const projectDetails: Record<string, { title?: string; desc: string; langs?: Arr
 			{ name: "HTML", svg: "langs/html.svg" },
 			{ name: "CSS", svg: "langs/css.svg" },
 			{ name: "JavaScript", svg: "langs/js.svg" },
+			{ name: "PokeAPI" },
 		],
 		priority: 6,
 	},
@@ -106,7 +113,10 @@ const priority = details?.priority ?? 99;
 	<p>{displayDesc}</p>
 	<div class="tech-list">
 		{displayLangs.map(lang => (
-			<span class="lang"><img src={`/${lang.svg}`} alt={lang.name} />{lang.name}</span>
+			<span class="lang">
+				{lang.svg && <img src={`/${lang.svg}`} alt="" aria-hidden="true" />}
+				{lang.name}
+			</span>
 		))}
 	</div>
 	<img class="preview" src={`/${displayImage}`} alt={displayTitle} />
