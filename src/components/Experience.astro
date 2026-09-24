@@ -166,9 +166,19 @@
 		margin-left: 0.4rem;
 	}
 
-	@media (width < 850px) {
+	@media (max-width: 850px) {
 		section {
-			width: 80%;
+			width: calc(100% - 28px);
+		}
+		section h2 {
+			font-size: 1.5rem;
+		}
+		li {
+			padding: 28px 4px;
+		}
+		li p {
+			font-size: 0.96rem;
+			line-height: 1.5rem;
 		}
 	}
 </style>
