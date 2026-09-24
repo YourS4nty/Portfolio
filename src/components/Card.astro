@@ -10,25 +10,25 @@ interface Props {
 
 const { title, desc, langs, image, source, live } = Astro.props;
 
-const projectDetails: Record<string, { title?: string; desc: string; langs?: Array<{ name: string; svg?: string }>; image?: string; priority: number; featured?: boolean; live?: string; liveLabel?: string }> = {
+const projectDetails: Record<string, { title?: string; desc: string; langs: Array<{ name: string; svg?: string }>; image: string; priority: number; featured?: boolean; live?: string; liveLabel?: string }> = {
 	"Apptesanos (Web/Mobile App)": {
-		title: "Apptesanos — Agricultural Supply App",
-		desc: "Collaborative Ionic + Vue application developed with Universidad de Cundinamarca to improve agricultural supply management. The project includes authentication, profile and main-menu flows, sales administration, Firebase integration, image handling, and bug fixes across the app.",
+		title: "Apptesanos — Ionic & Vue App",
+		desc: "Base code of the Apptesanos app, a collaborative agricultural-supply project with Universidad de Cundinamarca. The repository includes Signup/SignIn, Firebase, profile and main-menu updates, image fixes, sales administration, and general bug fixes.",
 		langs: [
-			{ name: "Ionic", svg: "langs/ionic.svg" },
 			{ name: "Vue.js", svg: "langs/vue.svg" },
+			{ name: "Ionic", svg: "langs/ionic.svg" },
+			{ name: "TypeScript" },
 			{ name: "Firebase" },
 			{ name: "Capacitor" },
-			{ name: "TypeScript" },
 		],
 		image: "Apptesanos.webp",
 		priority: 1,
 		featured: true,
 		live: "https://www.figma.com/file/hWhEkKPH2we11pcrYfhyFH/Apptesanos?type=design&node-id=0-1&mode=design",
-		liveLabel: "Prototype",
+		liveLabel: "Figma",
 	},
 	"Lornychi — Streamer & Vtuber Portfolio": {
-		desc: "Custom portfolio website for Lornychi, a streamer, Vtuber, and illustrator from Honduras. Built with Astro to present her artwork, stream schedule, community links, FAQ, setup information, and a dynamic illustration gallery in a responsive visual experience.",
+		desc: "Web portfolio for streamer and Vtuber Lornychi, developed with Astro and Tailwind. It includes personal information, an art gallery, social links, and stream schedules in a responsive portfolio experience.",
 		langs: [
 			{ name: "Astro", svg: "langs/astro.svg" },
 			{ name: "Tailwind CSS" },
@@ -38,12 +38,12 @@ const projectDetails: Record<string, { title?: string; desc: string; langs?: Arr
 		featured: true,
 	},
 	NoteGuard: {
-		desc: "Secure note-taking web application built with Node.js, Express, Firebase, and EJS. Users can create notes with optional password protection and expiration dates, combining a practical backend workflow with privacy-focused features and a deployed web interface.",
+		desc: "Noteguard is a simple note-taking application with password protection and expiration-date functionality. Built with Express and EJS, it uses Firebase for storage and node-cron for scheduled expiration handling.",
 		langs: [
 			{ name: "Node.js", svg: "langs/nodejs.svg" },
 			{ name: "Express" },
-			{ name: "Firebase" },
 			{ name: "EJS", svg: "langs/js.svg" },
+			{ name: "Firebase" },
 			{ name: "node-cron" },
 		],
 		image: "NoteGuard.webp",
@@ -52,19 +52,21 @@ const projectDetails: Record<string, { title?: string; desc: string; langs?: Arr
 	},
 	"Rest Api": {
 		title: "REST API — Node.js & Express",
-		desc: "Backend API built with Node.js and Express that exposes reusable services for QR generation, binary encoding and decoding, password generation, UUIDs, credit-card validation, country data, and book information. A practical demonstration of endpoint design and external API integration.",
+		desc: "Versatile REST API built with Node.js and Express.js, providing services for QR-code generation, credit-card validation, binary encoding/decoding, password generation, and country and book information.",
 		langs: [
+			{ name: "JavaScript", svg: "langs/js.svg" },
 			{ name: "Node.js", svg: "langs/nodejs.svg" },
 			{ name: "Express" },
 			{ name: "Axios" },
 			{ name: "QRCode" },
 			{ name: "UUID" },
+			{ name: "lorem-ipsum" },
 		],
 		image: "Api.webp",
 		priority: 4,
 	},
 	"Sudoku Solver": {
-		desc: "Interactive Sudoku solver built with HTML, CSS, and vanilla JavaScript. The project combines an algorithmic solving approach with a clear interface that lets users enter a puzzle and visualize the generated solution.",
+		desc: "Sudoku-solving algorithm implemented in HTML, CSS, and vanilla JavaScript. It provides an intuitive graphical interface to enter a puzzle, solve it with the algorithm, and clearly visualize the original puzzle and its solution.",
 		langs: [
 			{ name: "HTML", svg: "langs/html.svg" },
 			{ name: "CSS", svg: "langs/css.svg" },
@@ -74,19 +76,20 @@ const projectDetails: Record<string, { title?: string; desc: string; langs?: Arr
 		priority: 5,
 	},
 	PokeDex: {
-		title: "Pokédex — PokeAPI Integration",
-		desc: "Responsive Pokédex built with HTML, CSS, and vanilla JavaScript, consuming PokeAPI to display Pokémon data. Includes search and filtering and demonstrates practical API integration with real-world data.",
+		title: "Pokédex — PokeAPI",
+		desc: "Simple Pokédex web application developed with HTML, CSS, and vanilla JavaScript. It integrates PokeAPI to display Pokémon data and includes search, filtering, and responsive behavior for different devices.",
 		langs: [
 			{ name: "HTML", svg: "langs/html.svg" },
 			{ name: "CSS", svg: "langs/css.svg" },
 			{ name: "JavaScript", svg: "langs/js.svg" },
 			{ name: "PokeAPI" },
 		],
+		image: "pokedex.webp",
 		priority: 6,
 	},
 	"Ai Game (Basic)": {
-		title: "Rock, Paper, Scissors — AI Game",
-		desc: "Interactive Rock, Paper, Scissors game built with HTML, CSS, and vanilla JavaScript. It features an AI opponent, round-based game logic, and an intentionally simple interface focused on interaction and frontend fundamentals.",
+		title: "Rock, Paper, Scissors — AI",
+		desc: "Rock, Paper, Scissors game built with HTML, CSS, and vanilla JavaScript, featuring a built-in AI opponent, a minimalist interface, and round-based interaction.",
 		langs: [
 			{ name: "HTML", svg: "langs/html.svg" },
 			{ name: "CSS", svg: "langs/css.svg" },
