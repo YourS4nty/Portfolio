@@ -1,17 +1,57 @@
-# 🚀 My Web Portfolio
+# 🚀 Santiago González — Portfolio
 
-Hello! 👋 Welcome to my digital corner, where I share my journey, skills, and standout projects. This repository contains the source code for my personal web portfolio, designed to showcase my personality and creativity using modern technologies.
+Personal portfolio and showcase for **Santiago González**, a web developer focused on backend development, web technologies, Java plugins, and custom minigames.
 
-## Features ✨
-- **Responsive Design:** Adaptable to different devices for an optimal experience on any screen.
-- **Dynamic Sections:** Details about me, skills, projects, and ways to get in touch.
-- **Project Gallery:** Visual and detailed showcase of the projects I have undertaken.
-- **Technologies Used:** HTML5, CSS3, JavaScript.
+🌐 **Live portfolio:** https://your4portfolio.vercel.app  
+💻 **GitHub:** https://github.com/YourS4nty  
+📸 **Instagram:** https://instagram.com/YourS4nty
 
-## Exploration 🌐
-- **Source Code:** Examine the code to understand the structure and customize the content.
-- **Customization:** Adjust the style and color palette according to your preferences.
-- **Deployment:** [My Porfolio](https://your4portfolio.vercel.app).
+## ✨ What you'll find here
 
-## Get Inspired! 🌟
-I hope you find inspiration and enjoy exploring my work. If you have suggestions or questions, feel free to get in touch!
+- **About me** — background, experience, and current focus.
+- **Work experience** — selected professional and freelance work.
+- **Projects** — personal and collaborative web projects with their technologies and links.
+- **Skills** — languages, frameworks, tools, and development environments.
+- **Responsive UI** — layouts adapted for desktop and mobile screens.
+- **English / Spanish** — switch the portfolio language directly from the interface.
+
+## 🛠️ Built with
+
+- [Astro](https://astro.build/)
+- HTML5
+- CSS3
+- JavaScript
+- Responsive CSS and modern browser APIs
+
+## 📁 Project structure
+
+```text
+src/
+├── components/   # Reusable sections and UI components
+├── layouts/      # Shared page layouts
+├── pages/        # Portfolio pages
+└── assets/       # Static assets and visual resources
+```
+
+## 🚀 Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Then open the local development URL shown by Astro in your terminal.
+
+## 📦 Build for production
+
+```bash
+npm run build
+```
+
+The generated site can be deployed to a static host or a platform such as Vercel.
+
+## 👨‍💻 About the author
+
+I'm **Santiago González**, a web developer from Colombia with 4+ years of experience. My current focus is backend development, especially Java-based projects, plugins, and custom minigames, while continuing to build and explore modern web applications.
+
+If you'd like to collaborate or check out more of my work, visit my GitHub or the live portfolio above.
