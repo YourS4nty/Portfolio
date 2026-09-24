@@ -128,9 +128,19 @@ const displaySource = details?.source ?? source;
 const displayLive = details?.live ?? live;
 const liveLabel = details?.liveLabel ?? "Live";
 const priority = details?.priority ?? 99;
+const originalOrder: Record<string, number> = {
+	NoteGuard: 0,
+	"Rest Api": 1,
+	"Lornychi — Streamer & Vtuber Portfolio": 2,
+	"Sudoku Solver": 3,
+	"Ai Game (Basic)": 4,
+	"Apptesanos (Web/Mobile App)": 5,
+	PokeDex: 6,
+};
+const order = originalOrder[title] ?? 99;
 ---
 
-<article class:list={{ "featured-project": details?.featured }} class="project-card" data-project-priority={priority}>
+<article class:list={{ "featured-project": details?.featured }} class="project-card" data-project-priority={priority} data-project-order={order}>
 	{details?.featured && <span class="featured-badge">Featured project</span>}
 	<h1>{displayTitle}</h1>
 	<p>{displayDesc}</p>
@@ -154,24 +164,42 @@ const priority = details?.priority ?? 99;
 </article>
 
 <script>
-	const sortProjects = () => {
-		const container = document.querySelector("#Projects");
+	const getContainer = () => document.querySelector("#Projects");
+	const getCards = () => Array.from(document.querySelectorAll<HTMLElement>("#Projects .project-card"));
+
+	const restoreOriginalOrder = () => {
+		const container = getContainer();
 		if (!container) return;
-		const cards = Array.from(container.querySelectorAll<HTMLElement>(".project-card"));
-		cards
+		getCards()
+			.sort((a, b) => Number(a.dataset.projectOrder ?? 99) - Number(b.dataset.projectOrder ?? 99))
+			.forEach(card => container.appendChild(card));
+	};
+
+	const sortProjects = () => {
+		const container = getContainer();
+		if (!container) return;
+		getCards()
 			.sort((a, b) => Number(a.dataset.projectPriority ?? 99) - Number(b.dataset.projectPriority ?? 99))
 			.forEach(card => container.appendChild(card));
 	};
 
-	// Layout applies translated text after DOMContentLoaded. Sorting before that
-	// changes the card indexes and mixes one project's text with another project's
-	// image, source and live URL. Run the visual ordering after translation.
-	const scheduleSort = () => setTimeout(sortProjects, 100);
+	// Layout translates cards by their original DOM index. Always restore that
+	// stable order before translation, then restore the visual priority order.
+	const prepareForTranslation = () => {
+		restoreOriginalOrder();
+		setTimeout(sortProjects, 100);
+	};
+
 	if (document.readyState === "loading") {
-		document.addEventListener("DOMContentLoaded", scheduleSort, { once: true });
+		document.addEventListener("DOMContentLoaded", prepareForTranslation, { once: true });
 	} else {
-		scheduleSort();
+		prepareForTranslation();
 	}
+
+	document.addEventListener("click", event => {
+		const button = event.target instanceof Element ? event.target.closest(".lang-btn") : null;
+		if (button) prepareForTranslation();
+	});
 </script>
 
 <style>
