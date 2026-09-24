@@ -37,202 +37,97 @@ const { title } = Astro.props;
 			source: "Código fuente",
 			live: "Demo en vivo",
 			noLive: "Sin demo",
+			featuredProject: "Proyecto destacado",
 			experience: "Experiencia laboral",
 			exp: [
-				{
-					date: "Actualidad (2023 - Ahora)",
-					title: "Desarrollador freelance y fotógrafo",
-					text: "Trabajo de forma independiente como desarrollador web full-stack y fotógrafo aficionado. Me especializo en desarrollo backend con <strong>Node.js</strong> y creo plugins personalizados en <strong>Java</strong> y <strong>SkriptLang</strong> para Minecraft, incluidos minijuegos. También practico fotografía como una salida creativa que complementa mi trabajo de desarrollo, aportando contenido visual y perspectivas únicas a proyectos para clientes.",
-					link: "Portafolio y código"
-				},
-				{
-					date: "Junio 2022 – Marzo 2023",
-					title: "Desarrollador web",
-					text: "Desarrollé y mantuve aplicaciones web modernas utilizando HTML, CSS, JavaScript y herramientas backend. Ayudé a mejorar los flujos de trabajo mediante la incorporación de integración y despliegue continuos. Colaboré estrechamente con diseñadores e ingenieros backend para entregar experiencias de usuario funcionales."
-				},
-				{
-					date: "Septiembre 2021 – Enero 2022",
-					title: "Ingeniero Frontend y Backend",
-					text: "Lideré el desarrollo de funcionalidades full-stack en varias aplicaciones. Mejoré los procesos de despliegue y optimicé el rendimiento. Aumenté la velocidad de entrega de software en un 30 % mediante automatización y herramientas inteligentes."
-				}
+				{ date: "Actualidad (2023 - Ahora)", title: "Desarrollador freelance y fotógrafo", text: "Trabajo de forma independiente como desarrollador web full-stack y fotógrafo aficionado. Me especializo en desarrollo backend con <strong>Node.js</strong> y creo plugins personalizados en <strong>Java</strong> y <strong>SkriptLang</strong> para Minecraft, incluidos minijuegos. También practico fotografía como una salida creativa que complementa mi trabajo de desarrollo, aportando contenido visual y perspectivas únicas a proyectos para clientes.", link: "Portafolio y código" },
+				{ date: "Junio 2022 – Marzo 2023", title: "Desarrollador web", text: "Desarrollé y mantuve aplicaciones web modernas utilizando HTML, CSS, JavaScript y herramientas backend. Ayudé a mejorar los flujos de trabajo mediante la incorporación de integración y despliegue continuos. Colaboré estrechamente con diseñadores e ingenieros backend para entregar experiencias de usuario funcionales." },
+				{ date: "Septiembre 2021 – Enero 2022", title: "Ingeniero Frontend y Backend", text: "Lideré el desarrollo de funcionalidades full-stack en varias aplicaciones. Mejoré los procesos de despliegue y optimicé el rendimiento. Aumenté la velocidad de entrega de software en un 30 % mediante automatización y herramientas inteligentes." }
 			],
-			projectsList: [
-				["NoteGuard", "Una aplicación web para tomar notas desarrollada con Node.js y Express, utilizando Firebase como base de datos y EJS para las vistas. Permite asignar contraseñas a las notas, ofreciendo seguridad y privacidad al almacenar y gestionar los datos desde cualquier dispositivo con conexión a Internet."],
-				["Rest API", "Diseñé e implementé una API RESTful básica con Node.js y Express, demostrando experiencia en soluciones del lado del servidor, gestión eficiente de endpoints y manejo de solicitudes HTTP. El proyecto sirve como base para aplicaciones web escalables y responsivas y destaca mis habilidades de desarrollo backend."],
-				["Lornychi — Portafolio de Streamer y Vtuber", "Sitio web de portafolio personalizado para Lornychi, streamer, Vtuber e ilustradora de Honduras. Fue creado para mostrar su arte, calendario de transmisiones y redes sociales mediante un diseño dinámico y de inspiración kawaii. Incluye avatar animado, preguntas frecuentes, agenda semanal, galería aleatoria de arte y un diseño responsive orientado a su comunidad."],
-				["Sudoku Solver", "Implementé un algoritmo para resolver Sudoku utilizando HTML, CSS y JavaScript nativo. El proyecto demuestra mis habilidades para resolver problemas algorítmicos y desarrollar aplicaciones web, combinando lógica, interacción y tecnologías frontend fundamentales."],
-				["AI Game (Básico)", "Creé un juego de Piedra, Papel o Tijera con JavaScript nativo y un oponente basado en una IA simulada. El proyecto demuestra mi experiencia creando aplicaciones web interactivas, incorporando mecánicas de juego y conceptos básicos de inteligencia artificial."],
-				["Apptesanos (Aplicación Web/Móvil)", "Colaboré en una aplicación móvil desarrollada con Ionic Vue junto con la Universidad de Cundinamarca para optimizar la gestión de suministros agrícolas mediante Firebase. Mi trabajo se centró en el desarrollo colaborativo y en la implementación de soluciones tecnológicas para una agricultura sostenible."],
-				["PokeDex", "Diseñé e implementé una Pokédex con HTML, CSS y JavaScript nativo utilizando la PokeAPI. El proyecto destaca mis conocimientos de tecnologías frontend, integración de APIs y creación de aplicaciones web atractivas con datos reales."
-				]
-			],
-			skillsHeader: "Herramientas y tecnologías",
-			skillsLanguages: "Lenguajes",
-			skillsFrameworks: "Frameworks",
-			skillsTools: "Herramientas y entornos",
+			projectsList: {
+				NoteGuard: ["NoteGuard", "Una aplicación web para tomar notas desarrollada con Node.js y Express, utilizando Firebase como base de datos y EJS para las vistas. Permite asignar contraseñas a las notas y fechas de expiración, ofreciendo seguridad y privacidad al gestionar los datos."],
+				"Rest Api": ["REST API", "Diseñé e implementé una API RESTful con Node.js y Express para ofrecer servicios de generación de códigos QR, validación de tarjetas, codificación binaria, generación de contraseñas y consulta de información."],
+				"Lornychi — Streamer & Vtuber Portfolio": ["Lornychi — Portafolio de Streamer y Vtuber", "Sitio web de portafolio personalizado para Lornychi, streamer, Vtuber e ilustradora de Honduras. Presenta su arte, calendario de transmisiones y redes sociales mediante un diseño dinámico, con avatar animado, FAQ, agenda semanal, galería de arte y diseño responsive."],
+				"Sudoku Solver": ["Sudoku Solver", "Algoritmo para resolver Sudoku implementado con HTML, CSS y JavaScript nativo, acompañado de una interfaz interactiva para introducir el tablero, resolverlo y visualizar claramente el problema y su solución."],
+				"Ai Game (Basic)": ["Piedra, Papel o Tijera — IA", "Juego de Piedra, Papel o Tijera desarrollado con HTML, CSS y JavaScript nativo, con un oponente basado en IA, una interfaz minimalista y partidas por rondas."],
+				"Apptesanos (Web/Mobile App)": ["Apptesanos — Aplicación Ionic y Vue", "Aplicación móvil desarrollada colaborativamente con la Universidad de Cundinamarca para optimizar la gestión de suministros agrícolas mediante Firebase. Incluye autenticación, perfiles, menú principal y administración de ventas."],
+				PokeDex: ["Pokédex — PokeAPI", "Aplicación web de Pokédex desarrollada con HTML, CSS y JavaScript nativo. Integra PokeAPI para mostrar datos de Pokémon e incluye búsqueda, filtrado y comportamiento responsive."]
+			},
+			skillsHeader: "Herramientas y tecnologías", skillsLanguages: "Lenguajes", skillsFrameworks: "Frameworks", skillsTools: "Herramientas y entornos",
 			aboutTitle: "Sobre mí",
 			about1: 'Soy <span class="highlight-name">Santiago González</span>, un <span class="highlight-dev">desarrollador enfocado en backend</span> de Colombia con más de 4 años de experiencia creando soluciones full-stack. Me especializo en construir herramientas escalables con <span class="highlight-html">HTML</span>, <span class="highlight-css">CSS</span>, <span class="highlight-js">JavaScript</span>, <span class="highlight-vue">Vue.js</span> y <span class="highlight-express">Express.js</span>, integrando con frecuencia lógica de juegos, APIs y plugins personalizados.',
 			about2: 'Disfruto resolver problemas mediante código, ya sea un minijuego, una utilidad o una aplicación completa. Exploro constantemente <span class="highlight-keyword">nuevas tecnologías</span> y llevo esa misma curiosidad a mis hobbies: <span class="highlight-keyword">fotografía</span>, <span class="highlight-keyword">música</span> y <span class="highlight-keyword">videojuegos</span>.',
-			contact: "Contacto",
-			contactCopy: "Conectemos — estoy activo en:",
-			meta: "Portafolio de Santiago González — desarrollo web, backend, Java y proyectos digitales."
+			contact: "Contacto", contactCopy: "Conectemos — estoy activo en:", meta: "Portafolio de Santiago González — desarrollo web, backend, Java y proyectos digitales."
 		},
 		en: {
-			nav: ["Experience", "Projects", "Skills", "About me"],
-			eyebrow: "FULL-STACK · BACKEND · WEB",
-			heroHi: "Hi, I'm",
+			nav: ["Experience", "Projects", "Skills", "About me"], eyebrow: "FULL-STACK · BACKEND · WEB", heroHi: "Hi, I'm",
 			heroCopy: 'Web developer from <span style="color:#fca311">Colombia</span> with 4+ years of experience. <span style="color:#00b894">Backend-focused</span>, currently working on <span style="color:#ff7675">Java plugins</span> and <span style="color:#74b9ff">custom minigames</span>.',
-			github: "Go to GitHub",
-			instagram: "Go to Instagram",
-			projects: "Projects",
-			showMore: "Show more projects",
-			source: "Source code",
-			live: "Live demo",
-			noLive: "No live demo",
-			experience: "Work Experience",
+			github: "Go to GitHub", instagram: "Go to Instagram", projects: "Projects", showMore: "Show more projects", source: "Source code", live: "Live demo", noLive: "No live demo", featuredProject: "Featured project", experience: "Work Experience",
 			exp: [
-				{
-					date: "Present (2023 - Now)",
-					title: "Freelance Developer & Photographer",
-					text: "Working independently as a full-stack web developer and amateur photographer. I specialize in backend development using <strong>Node.js</strong> and create custom <strong>Java</strong> and <strong>SkriptLang</strong> plugins for Minecraft, including minigames. I also pursue photography as a creative outlet, complementing my development work by offering visually engaging content and unique perspectives for client projects.",
-					link: "Portfolio & Code"
-				},
-				{
-					date: "June 2022 – March 2023",
-					title: "Web Developer",
-					text: "Built and maintained modern web applications using HTML, CSS, JavaScript, and backend tools. Helped improve developer workflows by introducing continuous integration and deployment. Collaborated closely with designers and backend engineers to deliver functional user experiences."
-				},
-				{
-					date: "September 2021 – January 2022",
-					title: "Frontend & Backend Engineer",
-					text: "Led the development of full-stack features across multiple applications. Enhanced deployment pipelines and optimized performance. Boosted software delivery speed by 30% through automation and smart tooling."
-				}
+				{ date: "Present (2023 - Now)", title: "Freelance Developer & Photographer", text: "Working independently as a full-stack web developer and amateur photographer. I specialize in backend development using <strong>Node.js</strong> and create custom <strong>Java</strong> and <strong>SkriptLang</strong> plugins for Minecraft, including minigames. I also pursue photography as a creative outlet, complementing my development work by offering visually engaging content and unique perspectives for client projects.", link: "Portfolio & Code" },
+				{ date: "June 2022 – March 2023", title: "Web Developer", text: "Built and maintained modern web applications using HTML, CSS, JavaScript, and backend tools. Helped improve developer workflows by introducing continuous integration and deployment. Collaborated closely with designers and backend engineers to deliver functional user experiences." },
+				{ date: "September 2021 – January 2022", title: "Frontend & Backend Engineer", text: "Led the development of full-stack features across multiple applications. Enhanced deployment pipelines and optimized performance. Boosted software delivery speed by 30% through automation and smart tooling." }
 			],
-			projectsList: [
-				["NoteGuard", "A web application for note-taking developed with Node.js and Express, using Firebase as the database and EJS for views. It allows users to assign passwords to notes, providing security and privacy when storing and managing data from any Internet-connected device."],
-				["REST API", "Designed and implemented a basic RESTful API using Node.js and Express, showcasing my proficiency in server-side solutions, efficient endpoint management, and HTTP request handling. The project provides a foundation for scalable, responsive web applications and highlights my backend development skills."],
-				["Lornychi — Streamer & Vtuber Portfolio", "A custom portfolio website for Lornychi, a streamer, Vtuber, and illustrator from Honduras. Built to showcase her artwork, stream schedule, and social media through a dynamic, kawaii-inspired design. It features an animated avatar, FAQ, weekly schedule, random art gallery, and a responsive layout optimized for community engagement."],
-				["Sudoku Solver", "Implemented a Sudoku solver algorithm with HTML, CSS, and native JavaScript. This project demonstrates my proficiency in algorithmic problem-solving and web application development, combining logic, interaction, and core frontend technologies."],
-				["AI Game (Basic)", "Created a Rock, Paper, Scissors game using native JavaScript with a simulated AI opponent. This project demonstrates my ability to build interactive web applications while incorporating game mechanics and basic artificial intelligence concepts."],
-				["Apptesanos (Web/Mobile App)", "Collaborated on an Ionic Vue mobile app with the Universidad de Cundinamarca to optimize agricultural supply management through Firebase. My role focused on collaborative development and implementing technology solutions for sustainable agriculture."],
-				["PokeDex", "Designed and implemented a Pokedex with HTML, CSS, and native JavaScript using the PokeAPI. This project highlights my frontend skills, API integration, and ability to create engaging web applications with real-world data."]
-			],
-			skillsHeader: "Tools & Technologies",
-			skillsLanguages: "Languages",
-			skillsFrameworks: "Frameworks",
-			skillsTools: "Tools & Environments",
-			aboutTitle: "About Me",
+			projectsList: {
+				NoteGuard: ["NoteGuard", "A web application for note-taking developed with Node.js and Express, using Firebase for storage and EJS for views. It supports password-protected notes and expiration dates, providing privacy and controlled access to stored data."],
+				"Rest Api": ["REST API", "Designed and implemented a RESTful API with Node.js and Express that provides QR-code generation, card validation, binary encoding, password generation, and country and book information services."],
+				"Lornychi — Streamer & Vtuber Portfolio": ["Lornychi — Streamer & Vtuber Portfolio", "A custom portfolio website for Lornychi, a streamer, Vtuber, and illustrator from Honduras. It showcases artwork, stream schedules, and social media through a dynamic design with an animated avatar, FAQ, weekly schedule, art gallery, and responsive layout."],
+				"Sudoku Solver": ["Sudoku Solver", "Sudoku-solving algorithm implemented with HTML, CSS, and native JavaScript, with an interactive interface for entering a puzzle, solving it, and clearly visualizing the original board and its solution."],
+				"Ai Game (Basic)": ["Rock, Paper, Scissors — AI", "Rock, Paper, Scissors game built with HTML, CSS, and native JavaScript, featuring an AI-based opponent, a minimalist interface, and round-based gameplay."],
+				"Apptesanos (Web/Mobile App)": ["Apptesanos — Ionic & Vue App", "Collaborative mobile application developed with the Universidad de Cundinamarca to optimize agricultural supply management through Firebase. It includes authentication, profiles, the main menu, and sales administration."],
+				PokeDex: ["Pokédex — PokeAPI", "Pokédex web application built with HTML, CSS, and native JavaScript. It integrates PokeAPI to display Pokémon data and includes search, filtering, and responsive behavior."]
+			},
+			skillsHeader: "Tools & Technologies", skillsLanguages: "Languages", skillsFrameworks: "Frameworks", skillsTools: "Tools & Environments", aboutTitle: "About Me",
 			about1: 'I\'m <span class="highlight-name">Santiago González</span>, a <span class="highlight-dev">backend-focused developer</span> from Colombia with over 4 years of experience crafting full-stack solutions. I specialize in building scalable tools using <span class="highlight-html">HTML</span>, <span class="highlight-css">CSS</span>, <span class="highlight-js">JavaScript</span>, <span class="highlight-vue">Vue.js</span> and <span class="highlight-express">Express.js</span>, often integrating game logic, APIs, and custom plugins.',
 			about2: 'I enjoy solving problems through code—whether it\'s a minigame, a utility, or an entire app. I\'m constantly exploring <span class="highlight-keyword">new technologies</span>, and I bring that same curiosity to my hobbies: <span class="highlight-keyword">photography</span>, <span class="highlight-keyword">music</span>, and <span class="highlight-keyword">gaming</span>.',
-			contact: "Contact",
-			contactCopy: "Let’s connect — I’m active on:",
-			meta: "Portfolio of Santiago González — web development, backend, Java, and digital projects."
+			contact: "Contact", contactCopy: "Let’s connect — I’m active on:", meta: "Portfolio of Santiago González — web development, backend, Java, and digital projects."
 		}
 	};
 
 	const apply = (lang) => {
 		const t = copy[lang] || copy.es;
 		document.documentElement.lang = lang;
+		document.querySelectorAll('nav a span').forEach((el, i) => { if (t.nav[i]) el.textContent = t.nav[i]; });
+		const eyebrow = document.querySelector('.eyebrow'); if (eyebrow) eyebrow.textContent = t.eyebrow;
+		const heroTitle = document.querySelector('#hero-title'); if (heroTitle) heroTitle.innerHTML = `${t.heroHi} <span style="color:#61dafb">Santiago</span><span style="color:#d523f5"> González</span>`;
+		const heroCopy = document.querySelector('.hero-copy'); if (heroCopy) heroCopy.innerHTML = t.heroCopy;
+		const socialButtons = document.querySelectorAll('.hero-actions .social-button span'); if (socialButtons[0]) socialButtons[0].textContent = t.github; if (socialButtons[1]) socialButtons[1].textContent = t.instagram;
+		const projectsTitle = document.querySelector('#projects-title'); if (projectsTitle) projectsTitle.childNodes[projectsTitle.childNodes.length - 1].textContent = `\n\t\t\t${t.projects}\n\t\t`;
 
-		const nav = document.querySelectorAll('nav a span');
-		nav.forEach((el, i) => { if (t.nav[i]) el.textContent = t.nav[i]; });
-
-		const eyebrow = document.querySelector('.eyebrow');
-		if (eyebrow) eyebrow.textContent = t.eyebrow;
-		const heroTitle = document.querySelector('#hero-title');
-		if (heroTitle) heroTitle.innerHTML = `${t.heroHi} <span style="color:#61dafb">Santiago</span><span style="color:#d523f5"> González</span>`;
-		const heroCopy = document.querySelector('.hero-copy');
-		if (heroCopy) heroCopy.innerHTML = t.heroCopy;
-		const socialButtons = document.querySelectorAll('.hero-actions .social-button span');
-		if (socialButtons[0]) socialButtons[0].textContent = t.github;
-		if (socialButtons[1]) socialButtons[1].textContent = t.instagram;
-
-		const projectsTitle = document.querySelector('#projects-title');
-		if (projectsTitle) projectsTitle.childNodes[projectsTitle.childNodes.length - 1].textContent = `\n\t\t\t${t.projects}\n\t\t`;
-		const cards = document.querySelectorAll('.project-card');
-		cards.forEach((card, i) => {
-			const item = t.projectsList[i];
+		// Project content is keyed by data-project-key, never by visual/index order.
+		document.querySelectorAll('.project-card').forEach((card) => {
+			const key = card.getAttribute('data-project-key');
+			const item = key ? t.projectsList[key] : null;
 			if (!item) return;
-			const title = card.querySelector('h1');
-			const desc = card.querySelector('p');
-			if (title) title.textContent = item[0];
-			if (desc) desc.textContent = item[1];
-			const source = card.querySelector('.source span');
-			const live = card.querySelector('.live span');
-			const noLive = card.querySelector('.no-live span');
-			if (source) source.textContent = t.source;
-			if (live) live.textContent = t.live;
-			if (noLive) noLive.textContent = t.noLive;
+			const title = card.querySelector('h1'); const desc = card.querySelector('p');
+			if (title) title.textContent = item[0]; if (desc) desc.textContent = item[1];
+			const source = card.querySelector('.source span'); const live = card.querySelector('.live span'); const noLive = card.querySelector('.no-live span'); const featured = card.querySelector('.featured-badge');
+			if (source) source.textContent = t.source; if (live) live.textContent = t.live; if (noLive) noLive.textContent = t.noLive; if (featured) featured.textContent = t.featuredProject;
 		});
 
 		const experience = document.querySelector('#Experience section');
 		if (experience) {
-			const heading = experience.querySelector('h2');
-			if (heading) heading.lastChild.textContent = `\n\t\t${t.experience}\n\t`;
-			const items = experience.querySelectorAll('ol > li');
-			items.forEach((item, i) => {
-				const e = t.exp[i];
-				if (!e) return;
-				const time = item.querySelector('time');
-				const title = item.querySelector('h3');
-				const text = item.querySelector('p');
-				const link = item.querySelector('a');
-				if (time) time.textContent = e.date;
-				if (title) title.textContent = e.title;
-				if (text) text.innerHTML = e.text;
-				if (link) link.firstChild.textContent = `\n\t\t\t\t${e.link || ''}\n\t\t\t`;
-			});
+			const heading = experience.querySelector('h2'); if (heading) heading.lastChild.textContent = `\n\t\t${t.experience}\n\t`;
+			experience.querySelectorAll('ol > li').forEach((item, i) => { const e = t.exp[i]; if (!e) return; const time = item.querySelector('time'); const title = item.querySelector('h3'); const text = item.querySelector('p'); const link = item.querySelector('a'); if (time) time.textContent = e.date; if (title) title.textContent = e.title; if (text) text.innerHTML = e.text; if (link && e.link) link.firstChild.textContent = e.link; });
 		}
-
-		const skills = document.querySelector('#Skills');
-		if (skills) {
-			const header = skills.querySelector('header');
-			const headings = skills.querySelectorAll('h2');
-			if (header) header.textContent = t.skillsHeader;
-			if (headings[0]) headings[0].textContent = t.skillsLanguages;
-			if (headings[1]) headings[1].textContent = t.skillsFrameworks;
-			if (headings[2]) headings[2].textContent = t.skillsTools;
-		}
-
-		const about = document.querySelector('#AboutMe');
-		if (about) {
-			const heading = about.querySelector('.about h2');
-			const aboutPs = about.querySelectorAll('.about p');
-			const contactHeading = about.querySelector('.contact h2');
-			const contactCopy = about.querySelector('.contact p');
-			if (heading) heading.innerHTML = `<span>${t.aboutTitle}</span>`;
-			if (aboutPs[0]) aboutPs[0].innerHTML = t.about1;
-			if (aboutPs[1]) aboutPs[1].innerHTML = t.about2;
-			if (contactHeading) contactHeading.textContent = t.contact;
-			if (contactCopy) contactCopy.textContent = t.contactCopy;
-		}
-
-		const more = document.querySelector('#btnx span');
-		if (more) more.textContent = t.showMore;
-		const meta = document.querySelector('meta[name="description"]');
-		if (meta) meta.setAttribute('content', t.meta);
-		document.querySelectorAll('.lang-btn').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.lang === lang)));
+		const skills = document.querySelector('#Skills'); if (skills) { const header = skills.querySelector('header'); const headings = skills.querySelectorAll('h2'); if (header) header.textContent = t.skillsHeader; if (headings[0]) headings[0].textContent = t.skillsLanguages; if (headings[1]) headings[1].textContent = t.skillsFrameworks; if (headings[2]) headings[2].textContent = t.skillsTools; }
+		const about = document.querySelector('#AboutMe'); if (about) { const heading = about.querySelector('.about h2'); const aboutPs = about.querySelectorAll('.about p'); const contactHeading = about.querySelector('.contact h2'); const contactCopy = about.querySelector('.contact p'); if (heading) heading.innerHTML = `<span>${t.aboutTitle}</span>`; if (aboutPs[0]) aboutPs[0].innerHTML = t.about1; if (aboutPs[1]) aboutPs[1].innerHTML = t.about2; if (contactHeading) contactHeading.textContent = t.contact; if (contactCopy) contactCopy.textContent = t.contactCopy; }
+		const more = document.querySelector('#btnx span'); if (more) more.textContent = t.showMore;
+		const meta = document.querySelector('meta[name="description"]'); if (meta) meta.setAttribute('content', t.meta);
+		document.querySelectorAll('.lang-btn').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === lang)));
 		localStorage.setItem('portfolio-language', lang);
 	};
 
 	const run = () => apply(localStorage.getItem('portfolio-language') || 'es');
 	window.addEventListener('DOMContentLoaded', () => setTimeout(run, 0));
-	document.addEventListener('click', (event) => {
-		const button = event.target.closest('.lang-btn');
-		if (button) setTimeout(() => apply(button.dataset.lang), 0);
-	}, true);
+	document.addEventListener('click', (event) => { const button = event.target.closest('.lang-btn'); if (button) setTimeout(() => apply(button.dataset.lang), 0); }, true);
 })();
 </script>
 
 <style is:global>
 	* { margin: 0; padding: 0; box-sizing: border-box; }
 	::-webkit-scrollbar { display: none; }
-	html, body {
-		width: 100%; min-height: 100%; font-family: system-ui, sans-serif;
-		position: relative; background-color: #0a0a0a; scroll-behavior: smooth;
-		scrollbar-width: thin; scrollbar-color: transparent transparent;
-		overflow: -moz-scrollbars-none; -ms-overflow-style: none;
-	}
+	html, body { width: 100%; min-height: 100%; font-family: system-ui, sans-serif; position: relative; background-color: #0a0a0a; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: transparent transparent; overflow: -moz-scrollbars-none; -ms-overflow-style: none; }
 	a { text-decoration: none; }
 	ol, ul { list-style: none; }
 </style>
