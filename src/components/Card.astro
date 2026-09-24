@@ -10,7 +10,19 @@ interface Props {
 
 const { title, desc, langs, image, source, live } = Astro.props;
 
-const projectDetails: Record<string, { title?: string; desc: string; langs: Array<{ name: string; svg?: string }>; image: string; priority: number; featured?: boolean; live?: string; liveLabel?: string }> = {
+type ProjectDetails = {
+	title?: string;
+	desc: string;
+	langs: Array<{ name: string; svg?: string }>;
+	image: string;
+	source: string;
+	priority: number;
+	featured?: boolean;
+	live?: string;
+	liveLabel?: string;
+};
+
+const projectDetails: Record<string, ProjectDetails> = {
 	"Apptesanos (Web/Mobile App)": {
 		title: "Apptesanos — Ionic & Vue App",
 		desc: "Base code of the Apptesanos app, a collaborative agricultural-supply project with Universidad de Cundinamarca. The repository includes Signup/SignIn, Firebase, profile and main-menu updates, image fixes, sales administration, and general bug fixes.",
@@ -22,6 +34,7 @@ const projectDetails: Record<string, { title?: string; desc: string; langs: Arra
 			{ name: "Capacitor" },
 		],
 		image: "Apptesanos.webp",
+		source: "https://github.com/YourS4nty/ApptesanosApp",
 		priority: 1,
 		featured: true,
 		live: "https://www.figma.com/file/hWhEkKPH2we11pcrYfhyFH/Apptesanos?type=design&node-id=0-1&mode=design",
@@ -34,6 +47,7 @@ const projectDetails: Record<string, { title?: string; desc: string; langs: Arra
 			{ name: "Tailwind CSS" },
 		],
 		image: "Lorny.webp",
+		source: "https://github.com/YourS4nty/Lorny-s-Web",
 		priority: 2,
 		featured: true,
 	},
@@ -47,6 +61,7 @@ const projectDetails: Record<string, { title?: string; desc: string; langs: Arra
 			{ name: "node-cron" },
 		],
 		image: "NoteGuard.webp",
+		source: "https://github.com/YourS4nty/NoteGuard",
 		priority: 3,
 		featured: true,
 	},
@@ -63,6 +78,7 @@ const projectDetails: Record<string, { title?: string; desc: string; langs: Arra
 			{ name: "lorem-ipsum" },
 		],
 		image: "Api.webp",
+		source: "https://github.com/YourS4nty/Ys4Api",
 		priority: 4,
 	},
 	"Sudoku Solver": {
@@ -73,6 +89,7 @@ const projectDetails: Record<string, { title?: string; desc: string; langs: Arra
 			{ name: "JavaScript", svg: "langs/js.svg" },
 		],
 		image: "Sudoku.webp",
+		source: "https://github.com/YourS4nty/SudokuSolver",
 		priority: 5,
 	},
 	PokeDex: {
@@ -85,6 +102,7 @@ const projectDetails: Record<string, { title?: string; desc: string; langs: Arra
 			{ name: "PokeAPI" },
 		],
 		image: "pokedex.webp",
+		source: "https://github.com/YourS4nty/PokeDex",
 		priority: 6,
 	},
 	"Ai Game (Basic)": {
@@ -96,6 +114,7 @@ const projectDetails: Record<string, { title?: string; desc: string; langs: Arra
 			{ name: "JavaScript", svg: "langs/js.svg" },
 		],
 		image: "aigame.webp",
+		source: "https://github.com/YourS4nty/Ai-Game",
 		priority: 7,
 	},
 };
@@ -105,6 +124,7 @@ const displayTitle = details?.title ?? title;
 const displayDesc = details?.desc ?? desc;
 const displayLangs = details?.langs ?? langs;
 const displayImage = details?.image ?? image;
+const displaySource = details?.source ?? source;
 const displayLive = details?.live ?? live;
 const liveLabel = details?.liveLabel ?? "Live";
 const priority = details?.priority ?? 99;
@@ -124,7 +144,7 @@ const priority = details?.priority ?? 99;
 	</div>
 	<img class="preview" src={`/${displayImage}`} alt={displayTitle} />
 	<section class="links">
-		<a class="btn source" href={source} target="_blank" rel="noreferrer"><img src="/Github.svg" alt="GitHub" /><span>Source</span></a>
+		<a class="btn source" href={displaySource} target="_blank" rel="noreferrer"><img src="/Github.svg" alt="GitHub" /><span>Source</span></a>
 		{displayLive ? (
 			<a class="btn live" href={displayLive} target="_blank" rel="noreferrer"><img src="/live.svg" alt="Live" /><span>{liveLabel}</span></a>
 		) : (
