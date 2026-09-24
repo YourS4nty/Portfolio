@@ -28,33 +28,17 @@
     <h2 data-i18n="contactTitle">Contact</h2>
     <p data-i18n="contactCopy">Let’s connect — I’m active on:</p>
     <div class="social-icons">
-      <a
-        href="https://instagram.com/YourS4nty"
-        target="_blank" rel="noreferrer"
-        aria-label="Instagram"
-      >
+      <a href="https://instagram.com/YourS4nty" target="_blank" rel="noreferrer" aria-label="Instagram">
         <img src="/insta.svg" alt="Instagram" />
       </a>
-      <a
-        href="https://github.com/YourS4nty"
-        target="_blank"
-        aria-label="GitHub"
-      >
+      <a href="https://github.com/YourS4nty" target="_blank" aria-label="GitHub">
         <img src="/Github.svg" alt="GitHub" />
       </a>
-      <a
-        href="https://codepen.com/YourS4nty"
-        target="_blank"
-        aria-label="Codepen"
-      >
+      <a href="https://codepen.com/YourS4nty" target="_blank" aria-label="Codepen">
         <img src="/codepen.svg" alt="Twitter / X" />
       </a>
-            <a
-        href="https://steamcommunity.com/id/YourS4nty/"
-        target="_blank"
-        aria-label="Codepen"
-      >
-        <img src="/steam.svg" alt="Twitter / X" />
+      <a href="https://steamcommunity.com/id/YourS4nty/" target="_blank" aria-label="Steam">
+        <img src="/steam.svg" alt="Steam" />
       </a>
     </div>
   </div>
@@ -132,6 +116,22 @@
     font-size: 1rem;
   }
 
+  .about .highlight-name,
+  .about .highlight-dev,
+  .about .highlight-html,
+  .about .highlight-css,
+  .about .highlight-js,
+  .about .highlight-vue,
+  .about .highlight-express,
+  .about .highlight-keyword {
+    display: inline;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    text-decoration-color: currentColor;
+    text-decoration-skip-ink: auto;
+  }
+
   .contact {
     display: flex;
     flex-direction: column;
@@ -162,9 +162,7 @@
 
   .social-icons img {
     width: 45px;
-    transition:
-      transform 0.3s ease,
-      filter 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
   }
 
@@ -184,7 +182,6 @@
     .contact {
       width: 100%;
       max-height: 150px;
-      /* background-color: #60a5fa; */
     }
 
     .about p {
@@ -199,16 +196,16 @@
 
 <style>
 @media (max-width: 850px) {
-	footer {
-		width: calc(100% - 28px);
-		padding: 24px 18px;
-		gap: 2.5rem;
-	}
-	.about,
-	.contact {
-		width: 100%;
-		flex-basis: auto;
-	}
+  footer {
+    width: calc(100% - 28px);
+    padding: 24px 18px;
+    gap: 2.5rem;
+  }
+  .about,
+  .contact {
+    width: 100%;
+    flex-basis: auto;
+  }
 }
 @media (prefers-reduced-motion: reduce) { .social-icons a, .social-icons img { transition: none; } }
 </style>
