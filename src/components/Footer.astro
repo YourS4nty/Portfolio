@@ -1,26 +1,20 @@
 <footer>
   <div class="about">
     <h2><span data-i18n="aboutTitle">About</span> <span class="highlight-blue">Me</span></h2>
-    <p>
-      I'm <span class="highlight-name">Santiago González</span>, a
-      <span class="highlight-dev">backend-focused developer</span> from Colombia
-      with over 4 years of experience crafting full-stack solutions. I specialize
-      in building scalable tools using <span class="highlight-html">HTML</span>, <span
-        class="highlight-css">CSS</span
-      >, <span class="highlight-js">JavaScript</span>, <span
-        class="highlight-vue">Vue.js</span
-      > and <span class="highlight-express">Express.js</span>, often integrating
-      game logic, APIs, and custom plugins.
+    <p data-i18n="about1">
+      I'm <span style="color:#61dafb">Santiago González</span>, a
+      <span style="color:#00b894">backend-focused developer</span> from
+      <span style="color:#fca311">Colombia</span> with over 4 years of experience crafting full-stack solutions.
+      I specialize in building scalable tools using <span style="color:#ef6629">HTML</span>,
+      <span style="color:#60a5fa">CSS</span>, <span style="color:#facc15">JavaScript</span>,
+      <span style="color:#4ade80">Vue.js</span> and <span style="color:#ffffffcc">Express.js</span>,
+      often integrating game logic, APIs, and custom plugins.
     </p>
-    <p>
+    <p data-i18n="about2">
       I enjoy solving problems through code—whether it’s a minigame, a utility,
-      or an entire app. I'm constantly exploring <span class="highlight-keyword"
-        >new technologies</span
-      >, and I bring that same curiosity to my hobbies: <span
-        class="highlight-keyword">photography</span
-      >, <span class="highlight-keyword">music</span>, and <span
-        class="highlight-keyword">gaming</span
-      >.
+      or an entire app. I'm constantly exploring <span style="color:#74b9ff">new technologies</span>,
+      and I bring that same curiosity to my hobbies: <span style="color:#c084fc">photography</span>,
+      <span style="color:#c084fc">music</span>, and <span style="color:#c084fc">gaming</span>.
     </p>
   </div>
 
@@ -28,184 +22,32 @@
     <h2 data-i18n="contactTitle">Contact</h2>
     <p data-i18n="contactCopy">Let’s connect — I’m active on:</p>
     <div class="social-icons">
-      <a href="https://instagram.com/YourS4nty" target="_blank" rel="noreferrer" aria-label="Instagram">
-        <img src="/insta.svg" alt="Instagram" />
-      </a>
-      <a href="https://github.com/YourS4nty" target="_blank" aria-label="GitHub">
-        <img src="/Github.svg" alt="GitHub" />
-      </a>
-      <a href="https://codepen.com/YourS4nty" target="_blank" aria-label="Codepen">
-        <img src="/codepen.svg" alt="Twitter / X" />
-      </a>
-      <a href="https://steamcommunity.com/id/YourS4nty/" target="_blank" aria-label="Steam">
-        <img src="/steam.svg" alt="Steam" />
-      </a>
+      <a href="https://instagram.com/YourS4nty" target="_blank" rel="noreferrer" aria-label="Instagram"><img src="/insta.svg" alt="Instagram" /></a>
+      <a href="https://github.com/YourS4nty" target="_blank" aria-label="GitHub"><img src="/Github.svg" alt="GitHub" /></a>
+      <a href="https://codepen.com/YourS4nty" target="_blank" aria-label="Codepen"><img src="/codepen.svg" alt="Codepen" /></a>
+      <a href="https://steamcommunity.com/id/YourS4nty/" target="_blank" aria-label="Steam"><img src="/steam.svg" alt="Steam" /></a>
     </div>
   </div>
 </footer>
 
 <style>
-  footer {
-    width: min(1100px, 85%);
-    padding: 34px;
-    border: 1px solid rgba(255,255,255,.07);
-    border-radius: 24px;
-    background: rgba(255,255,255,.025);
-    box-shadow: 0 22px 70px rgba(0,0,0,.18);
-    margin: 5rem auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    color: aliceblue;
-    gap: 5rem;
-  }
-
-  .about,
-  .contact {
-    flex: 1 1 300px;
-  }
-
-  h2 {
-    font-size: 2rem;
-    color: rgb(254 240 138);
-    margin-bottom: 1rem;
-  }
-
-  .highlight-blue {
-    color: #7dd3fc;
-  }
-
-  .highlight-name {
-    color: #60caed;
-    font-weight: 600;
-  }
-
-  .highlight-dev {
-    color: #a5f3fc;
-    font-style: italic;
-  }
-
-  .highlight-html {
-    color: #ef6629;
-  }
-
-  .highlight-css {
-    color: #60a5fa;
-  }
-
-  .highlight-js {
-    color: #facc15;
-  }
-
-  .highlight-vue {
-    color: #4ade80;
-  }
-
-  .highlight-express {
-    color: #ffffffcc;
-  }
-
-  .highlight-keyword {
-    color: #c084fc;
-  }
-
-  .about p {
-    margin-bottom: 1rem;
-    line-height: 1.7;
-    font-size: 1rem;
-  }
-
-  .about .highlight-name,
-  .about .highlight-dev,
-  .about .highlight-html,
-  .about .highlight-css,
-  .about .highlight-js,
-  .about .highlight-vue,
-  .about .highlight-express,
-  .about .highlight-keyword {
-    display: inline;
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
-    text-decoration-color: currentColor;
-    text-decoration-skip-ink: auto;
-  }
-
-  .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contact p {
-    margin: 1rem 0;
-  }
-
-  .social-icons {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .social-icons a {
-    width: 50px;
-    height: 50px;
-    display: grid;
-    place-items: center;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,.06);
-    background: rgba(255,255,255,.025);
-    transition: transform .25s ease, border-color .25s ease, background .25s ease;
-  }
-
+  footer { width: min(1100px, 85%); padding: 34px; border: 1px solid rgba(255,255,255,.07); border-radius: 24px; background: rgba(255,255,255,.025); box-shadow: 0 22px 70px rgba(0,0,0,.18); margin: 5rem auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; color: aliceblue; gap: 5rem; }
+  .about, .contact { flex: 1 1 300px; }
+  h2 { font-size: 2rem; color: rgb(254 240 138); margin-bottom: 1rem; }
+  .highlight-blue { color: #7dd3fc; }
+  .about p { margin-bottom: 1rem; line-height: 1.7; font-size: 1rem; }
+  .about p span { font-weight: 600; text-decoration-line: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: currentColor; text-decoration-skip-ink: auto; }
+  .contact { display: flex; flex-direction: column; align-items: center; }
+  .contact p { margin: 1rem 0; }
+  .social-icons { display: flex; gap: 1rem; }
+  .social-icons a { width: 50px; height: 50px; display: grid; place-items: center; border-radius: 14px; border: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.025); transition: transform .25s ease, border-color .25s ease, background .25s ease; }
   .social-icons a:hover { transform: translateY(-4px); border-color: rgba(167,139,250,.35); background: rgba(127,90,240,.08); }
-
-  .social-icons img {
-    width: 45px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    cursor: pointer;
-  }
-
-  .social-icons img:hover {
-    transform: scale(1.15);
-    filter: brightness(1.2) saturate(1.5);
-  }
-
-  @media (max-width: 850px) {
-    footer {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin: 2rem auto;
-    }
-
-    .contact {
-      width: 100%;
-      max-height: 150px;
-    }
-
-    .about p {
-      text-align: start;
-    }
-
-    .social-icons {
-      justify-content: center;
-    }
-  }
+  .social-icons img { width: 45px; transition: transform .3s ease, filter .3s ease; cursor: pointer; }
+  .social-icons img:hover { transform: scale(1.15); filter: brightness(1.2) saturate(1.5); }
+  @media (max-width: 850px) { footer { flex-direction: column; align-items: center; text-align: center; margin: 2rem auto; } .contact { width: 100%; max-height: 150px; } .about p { text-align: start; } .social-icons { justify-content: center; } }
 </style>
 
 <style>
-@media (max-width: 850px) {
-  footer {
-    width: calc(100% - 28px);
-    padding: 24px 18px;
-    gap: 2.5rem;
-  }
-  .about,
-  .contact {
-    width: 100%;
-    flex-basis: auto;
-  }
-}
+@media (max-width: 850px) { footer { width: calc(100% - 28px); padding: 24px 18px; gap: 2.5rem; } .about, .contact { width: 100%; flex-basis: auto; } }
 @media (prefers-reduced-motion: reduce) { .social-icons a, .social-icons img { transition: none; } }
 </style>
