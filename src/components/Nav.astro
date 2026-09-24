@@ -1,41 +1,75 @@
-<nav>
+<nav aria-label="Primary navigation">
     <a href="#Experience"><span>Experience</span></a>
     <a href="#Projectsx"><span>Projects</span></a>
     <a href="#Skills"><span>Skills</span></a>
-    <a href="#AboutMe"><span>AboutMe</span></a>
+    <a href="#AboutMe"><span>About me</span></a>
 </nav>
+
+<script>
+    const links = [...document.querySelectorAll("nav a")];
+    const sections = links
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+    const updateActive = () => {
+        const marker = window.scrollY + window.innerHeight * 0.28;
+        let active = sections[0];
+        for (const section of sections) {
+            if (section.offsetTop <= marker) active = section;
+        }
+        links.forEach((link) => {
+            const isActive = link.getAttribute("href") === "#" + active.id;
+            link.toggleAttribute("data-active", isActive);
+            if (isActive) link.setAttribute("aria-current", "page");
+            else link.removeAttribute("aria-current");
+        });
+    };
+    updateActive();
+    window.addEventListener("scroll", updateActive, { passive: true });
+</script>
 
 <style>
     nav {
-        width: 50%;
-        height: 45px;
+        width: min(720px, calc(100% - 28px));
+        height: 52px;
         position: fixed;
-        margin: 10px auto;
+        top: 14px;
         left: 50%;
-        transform: translate(-50%);
+        transform: translateX(-50%);
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        background-color: #101017;
-        border: 1px solid #000;
-        border-radius: 5px;
+        padding: 4px 8px;
+        background: rgba(16,16,23,.72);
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 16px;
         z-index: 99999999;
+        box-shadow: 0 14px 40px rgba(0,0,0,.28);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
     }
     a {
         text-decoration: none;
-        color: #fff;
+        color: #a9a9b4;
+        padding: 9px 13px;
+        border-radius: 11px;
+        transition: color .2s ease, background-color .2s ease, transform .2s ease;
     }
     span {
         border-bottom: 1px solid transparent;
-        transition: border-bottom 0.3s ease-in-out;
+        transition: border-color .2s ease;
     }
-
-    a:hover span {
-        border-bottom: 1px solid #fff;
+    a:hover, a[data-active] {
+        color: #fff;
+        background: rgba(127,90,240,.13);
     }
-    @media (width < 850px) {
-    nav{
-        width: 90%;
+    a:hover { transform: translateY(-1px); }
+    a[data-active] span { border-bottom-color: #a78bfa; }
+    @media (max-width: 850px) {
+        nav { width: calc(100% - 20px); top: 10px; height: 48px; }
+        a { padding: 8px 7px; font-size: .78rem; }
     }
+    @media (prefers-reduced-motion: reduce) {
+        a { transition: none; }
     }
 </style>
