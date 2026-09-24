@@ -26,15 +26,16 @@ import Footer from "../components/Footer.astro";
 		</a>
 
 		<Nav />
-		<main id="Main">
+		<main id="Main" aria-labelledby="hero-title">
 			<section class="Me">
 				<img src="/Me.webp" alt="YourS4nty" />
 				<div>
-					<h1 style="color: #ffffff;">
+					<p class="eyebrow">FULL-STACK · BACKEND · WEB</p>
+					<h1 id="hero-title" style="color: #ffffff;">
 						Hi, I'm <span style="color: #61dafb;">Santiago</span
 						><span style="color: #d523f5;"> González</span>
 					</h1>
-					<p style="color: #cccccc;">
+					<p class="hero-copy" style="color: #cccccc;">
 						Web developer from <span style="color: #fca311;"
 							>Colombia</span
 						> with 4+ years of experience.
@@ -45,9 +46,11 @@ import Footer from "../components/Footer.astro";
 						<span style="color: #74b9ff;">custom minigames</span>.
 					</p>
 
-					<section>
+					<section class="hero-actions" aria-label="Social links">
 						<a
 							href="https://github.com/YourS4nty"
+							target="_blank"
+							rel="noreferrer"
 							class="social-button"
 						>
 							<svg
@@ -62,6 +65,8 @@ import Footer from "../components/Footer.astro";
 						</a>
 						<a
 							href="https://instagram.com/YourS4nty"
+							target="_blank"
+							rel="noreferrer"
 							class="social-button"
 						>
 							<svg
@@ -83,9 +88,9 @@ import Footer from "../components/Footer.astro";
 		<Experience />
 	</div>
 
-	<section class="Projects" id="Projects">
+	<section class="Projects" id="Projects" aria-labelledby="projects-title">
 		<div class="complement" id="Projectsx"></div>
-		<h2>
+		<h2 id="projects-title">
 			<svg
 				viewBox="0 0 24 24"
 				stroke-width="2"
@@ -180,18 +185,6 @@ import Footer from "../components/Footer.astro";
 			source="https://github.com/YourS4nty/PokeDex"
 			live="https://ys4pokedex.vercel.app/"
 		/>
-		<Card
-			title="Ph Logo - Maker"
-			desc="Developed an image generator inspired by the layout of the P*rnHub logo using HTML, CSS, and native JavaScript. This project showcases my creativity in web design and front-end development, blending visual elements and interactivity for a unique and engaging user experience."
-			langs={[
-				{ name: "HTML", svg: "langs/html.svg" },
-				{ name: "CSS", svg: "langs/css.svg" },
-				{ name: "JS", svg: "langs/js.svg" },
-			]}
-			image="ph.webp"
-			source="https://github.com/YourS4nty/PH-LogoMaker"
-			live="https://ph-maker.vercel.app/"
-		/>
 		<div id="vmore">
 			<button id="btnx">
 				<span>Mostrar más proyectos</span>
@@ -260,7 +253,7 @@ import Footer from "../components/Footer.astro";
 			align-items: center;
 			z-index: 99999;
 			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-			transition: all 0.3s ease;
+			transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 			animation: floatUpDown 2s ease-in-out infinite;
 		}
 
@@ -300,7 +293,7 @@ import Footer from "../components/Footer.astro";
 		p {
 			text-wrap: wrap;
 		}
-		.Me {
+		.eyebrow {\n\t\t\tmargin: 0 0 10px;\n\t\t\tfont-size: 0.78rem;\n\t\t\tletter-spacing: 0.18em;\n\t\t\tfont-weight: 700;\n\t\t\tcolor: #a78bfa;\n\t\t\topacity: 0.95;\n\t\t}\n\t\t.hero-copy { max-width: 62ch; }\n\t\t.Me {
 			width: 60%;
 			height: 70%;
 			margin: auto;
@@ -322,7 +315,7 @@ import Footer from "../components/Footer.astro";
 			background-color: #1a1a1a;
 			border: 2px solid #5f5f5f;
 			box-shadow: 0 0 20px rgba(100, 10, 250, 0.5);
-			transition: transform 0.5s ease;
+			transition: transform 0.45s ease, box-shadow 0.45s ease;
 		}
 		.Me img:hover {
 			transform: scale(1.05);
@@ -331,7 +324,7 @@ import Footer from "../components/Footer.astro";
 		.Me div {
 			width: 50%;
 		}
-		.social-button {
+		.hero-actions { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 6px; }\n\t\t.social-button {
 			display: inline-flex;
 			align-items: center;
 			gap: 8px;
@@ -349,7 +342,7 @@ import Footer from "../components/Footer.astro";
 		.social-button:hover {
 			background-color: #333;
 			color: white;
-			transform: translateY(-2px);
+			transform: translateY(-3px);\n\t\t\tborder-color: #7f5af0;
 		}
 
 		.social-button svg {
@@ -360,7 +353,7 @@ import Footer from "../components/Footer.astro";
 		#Experience {
 			/* margin-bottom: 10000px; */
 		}
-		.Projects {
+		.Projects {\n\t\t\tbackground: rgba(255,255,255,0.025);\n\t\t\tborder: 1px solid rgba(255,255,255,0.07);\n\t\t\tborder-radius: 28px;\n\t\t\tpadding: 28px 20px 8px;\n\t\t\tbox-shadow: 0 24px 80px rgba(0,0,0,.22);\n\t\t\tbackdrop-filter: blur(14px);
 			width: 50%;
 			max-height: 2000px;
 			margin: 100px auto;
@@ -421,7 +414,7 @@ import Footer from "../components/Footer.astro";
 			transform: translateY(3px);
 		}
 
-		.Projects h2 {
+		.Projects h2 {\n\t\t\tpadding: 0 10px;
 			font-size: 1.875rem;
 			line-height: 2.25rem;
 			font-weight: 600;
@@ -468,7 +461,7 @@ import Footer from "../components/Footer.astro";
 			}
 		}
 
-		@media (max-width: 850px) {
+		@media (prefers-reduced-motion: reduce) {\n\t\t\t*, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }\n\t\t}\n\n\t\t@media (max-width: 850px) {
 			.bg {
 				height: 120vh;
 			}
@@ -492,8 +485,8 @@ import Footer from "../components/Footer.astro";
 				width: 200px;
 				height: 200px;
 			}
-			#Projects {
-				width: 95%;
+			.eyebrow { font-size: 0.7rem; }\n\t\t\t.hero-actions { justify-content: center; }\n\t\t	#Projects {
+				width: 95%;\n\t\t\t\tpadding: 22px 10px 4px;
 			}
 		}
 	</style>
