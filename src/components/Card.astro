@@ -9,29 +9,102 @@ interface Props {
 }
 
 const { title, desc, langs, image, source, live } = Astro.props;
+
+const projectDetails: Record<string, { title?: string; desc: string; langs?: Array<{ name: string; svg: string }>; priority: number; featured?: boolean; live?: string; liveLabel?: string }> = {
+	"Apptesanos (Web/Mobile App)": {
+		title: "Apptesanos — Agricultural Supply App",
+		desc: "Collaborative Ionic + Vue application developed with Universidad de Cundinamarca to improve agricultural supply management. The project includes authentication, profile and main-menu flows, sales administration, Firebase integration, image handling, and bug fixes across the app.",
+		langs: [
+			{ name: "Ionic", svg: "langs/ionic.svg" },
+			{ name: "Vue.js", svg: "langs/vue.svg" },
+			{ name: "Firebase", svg: "langs/firebase.svg" },
+		],
+		priority: 1,
+		featured: true,
+		live: "https://www.figma.com/file/hWhEkKPH2we11pcrYfhyFH/Apptesanos?type=design&node-id=0-1&mode=design",
+		liveLabel: "Prototype",
+	},
+	"Lornychi — Streamer & Vtuber Portfolio": {
+		desc: "Custom portfolio website for Lornychi, a streamer, Vtuber, and illustrator from Honduras. Built with Astro to present her artwork, stream schedule, community links, FAQ, setup information, and a dynamic illustration gallery in a responsive visual experience.",
+		priority: 2,
+		featured: true,
+	},
+	NoteGuard: {
+		desc: "Secure note-taking web application built with Node.js, Express, Firebase, and EJS. Users can create notes with optional password protection and expiration dates, combining a practical backend workflow with privacy-focused features and a deployed web interface.",
+		priority: 3,
+		featured: true,
+	},
+	"Rest Api": {
+		title: "REST API — Node.js & Express",
+		desc: "Backend API built with Node.js and Express that exposes reusable services for QR generation, binary encoding and decoding, password generation, UUIDs, credit-card validation, country data, and book information. A practical demonstration of endpoint design and external API integration.",
+		priority: 4,
+	},
+	"Sudoku Solver": {
+		desc: "Interactive Sudoku solver built with HTML, CSS, and vanilla JavaScript. The project combines an algorithmic solving approach with a clear interface that lets users enter a puzzle and visualize the generated solution.",
+		priority: 5,
+	},
+	PokeDex: {
+		title: "Pokédex — PokeAPI Integration",
+		desc: "Responsive Pokédex built with HTML, CSS, and vanilla JavaScript, consuming PokeAPI to display Pokémon data. Includes search and filtering and demonstrates practical API integration with real-world data.",
+		priority: 6,
+	},
+	"Ai Game (Basic)": {
+		title: "Rock, Paper, Scissors — AI Game",
+		desc: "Interactive Rock, Paper, Scissors game built with HTML, CSS, and vanilla JavaScript. It features an AI opponent, round-based game logic, and an intentionally simple interface focused on interaction and frontend fundamentals.",
+		priority: 7,
+	},
+};
+
+const details = projectDetails[title];
+const displayTitle = details?.title ?? title;
+const displayDesc = details?.desc ?? desc;
+const displayLangs = details?.langs ?? langs;
+const displayLive = details?.live ?? live;
+const liveLabel = details?.liveLabel ?? "Live";
+const priority = details?.priority ?? 99;
 ---
 
-<article class="project-card">
-	<h1>{title}</h1>
-	<p>{desc}</p>
+<article class:list={{ "featured-project": details?.featured }} class="project-card" data-project-priority={priority}>
+	{details?.featured && <span class="featured-badge">Featured project</span>}
+	<h1>{displayTitle}</h1>
+	<p>{displayDesc}</p>
 	<div class="tech-list">
-		{langs.map(lang => (
+		{displayLangs.map(lang => (
 			<span class="lang"><img src={`/${lang.svg}`} alt={lang.name} />{lang.name}</span>
 		))}
 	</div>
-	<img class="preview" src={`/${image}`} alt={title} />
+	<img class="preview" src={`/${image}`} alt={displayTitle} />
 	<section class="links">
 		<a class="btn source" href={source} target="_blank" rel="noreferrer"><img src="/Github.svg" alt="GitHub" /><span>Source</span></a>
-		{live ? (
-			<a class="btn live" href={live} target="_blank" rel="noreferrer"><img src="/live.svg" alt="Live" /><span>Live</span></a>
+		{displayLive ? (
+			<a class="btn live" href={displayLive} target="_blank" rel="noreferrer"><img src="/live.svg" alt="Live" /><span>{liveLabel}</span></a>
 		) : (
 			<span class="btn no-live"><span>No Live</span></span>
 		)}
 	</section>
 </article>
 
+<script>
+	const sortProjects = () => {
+		const container = document.querySelector("#Projects");
+		if (!container) return;
+		const cards = Array.from(container.querySelectorAll<HTMLElement>(".project-card"));
+		cards
+			.sort((a, b) => Number(a.dataset.projectPriority ?? 99) - Number(b.dataset.projectPriority ?? 99))
+			.forEach(card => container.appendChild(card));
+	};
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", sortProjects, { once: true });
+	} else {
+		sortProjects();
+	}
+</script>
+
 <style>
 	article { width: 100%; margin: 54px auto; padding: 24px; border: 1px solid rgba(255,255,255,.07); border-radius: 22px; background: rgba(255,255,255,.025); box-shadow: 0 18px 55px rgba(0,0,0,.18); backdrop-filter: blur(10px); transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease; color: aliceblue; position: relative; }
+	.featured-project { border-color: rgba(127,90,240,.38); box-shadow: 0 20px 65px rgba(127,90,240,.12); }
+	.featured-badge { display: inline-flex; align-items: center; margin-bottom: 12px; padding: 5px 10px; border: 1px solid rgba(127,90,240,.35); border-radius: 9999px; background: rgba(127,90,240,.12); color: #caaaff; font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 	h1 { position: relative; color: rgb(254 240 138); font-size: clamp(1.35rem, 2.2vw, 1.75rem); font-weight: 600; margin-bottom: 12px; padding-left: 20px; display: flex; align-items: center; overflow-wrap: anywhere; }
 	h1::before { content: ""; flex: 0 0 10px; width: 10px; height: 10px; border-radius: 50%; background: rgb(254 240 138 / 90%); position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
 	p { font-size: clamp(.98rem, 1.3vw, 1.1rem); line-height: 1.6rem; margin-bottom: 25px; color: #dcdcdc; overflow-wrap: anywhere; }
