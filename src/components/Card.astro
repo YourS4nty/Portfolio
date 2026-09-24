@@ -163,10 +163,14 @@ const priority = details?.priority ?? 99;
 			.forEach(card => container.appendChild(card));
 	};
 
+	// Layout applies translated text after DOMContentLoaded. Sorting before that
+	// changes the card indexes and mixes one project's text with another project's
+	// image, source and live URL. Run the visual ordering after translation.
+	const scheduleSort = () => setTimeout(sortProjects, 100);
 	if (document.readyState === "loading") {
-		document.addEventListener("DOMContentLoaded", sortProjects, { once: true });
+		document.addEventListener("DOMContentLoaded", scheduleSort, { once: true });
 	} else {
-		sortProjects();
+		scheduleSort();
 	}
 </script>
 
