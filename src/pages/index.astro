@@ -379,7 +379,16 @@ import Footer from "../components/Footer.astro";
 		p {
 			text-wrap: wrap;
 		}
-		.eyebrow {\n\t\t\tmargin: 0 0 10px;\n\t\t\tfont-size: 0.78rem;\n\t\t\tletter-spacing: 0.18em;\n\t\t\tfont-weight: 700;\n\t\t\tcolor: #a78bfa;\n\t\t\topacity: 0.95;\n\t\t}\n\t\t.hero-copy { max-width: 62ch; }\n\t\t.Me {
+		.eyebrow {
+\t\t\tmargin: 0 0 10px;
+\t\t\tfont-size: 0.78rem;
+\t\t\tletter-spacing: 0.18em;
+\t\t\tfont-weight: 700;
+\t\t\tcolor: #a78bfa;
+\t\t\topacity: 0.95;
+\t\t}
+\t\t.hero-copy { max-width: 62ch; }
+\t\t.Me {
 			width: 60%;
 			height: 70%;
 			margin: auto;
@@ -410,7 +419,8 @@ import Footer from "../components/Footer.astro";
 		.Me div {
 			width: 50%;
 		}
-		.hero-actions { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 6px; }\n\t\t.social-button {
+		.hero-actions { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 6px; }
+\t\t.social-button {
 			display: inline-flex;
 			align-items: center;
 			gap: 8px;
@@ -428,7 +438,8 @@ import Footer from "../components/Footer.astro";
 		.social-button:hover {
 			background-color: #333;
 			color: white;
-			transform: translateY(-3px);\n\t\t\tborder-color: #7f5af0;
+			transform: translateY(-3px);
+\t\t\tborder-color: #7f5af0;
 		}
 
 		.social-button svg {
@@ -439,7 +450,13 @@ import Footer from "../components/Footer.astro";
 		#Experience {
 			/* margin-bottom: 10000px; */
 		}
-		.Projects {\n\t\t\tbackground: rgba(255,255,255,0.025);\n\t\t\tborder: 1px solid rgba(255,255,255,0.07);\n\t\t\tborder-radius: 28px;\n\t\t\tpadding: 28px 20px 8px;\n\t\t\tbox-shadow: 0 24px 80px rgba(0,0,0,.22);\n\t\t\tbackdrop-filter: blur(14px);
+		.Projects {
+\t\t\tbackground: rgba(255,255,255,0.025);
+\t\t\tborder: 1px solid rgba(255,255,255,0.07);
+\t\t\tborder-radius: 28px;
+\t\t\tpadding: 28px 20px 8px;
+\t\t\tbox-shadow: 0 24px 80px rgba(0,0,0,.22);
+\t\t\tbackdrop-filter: blur(14px);
 			width: 50%;
 			max-height: 2000px;
 			margin: 100px auto;
@@ -500,7 +517,8 @@ import Footer from "../components/Footer.astro";
 			transform: translateY(3px);
 		}
 
-		.Projects h2 {\n\t\t\tpadding: 0 10px;
+		.Projects h2 {
+\t\t\tpadding: 0 10px;
 			font-size: 1.875rem;
 			line-height: 2.25rem;
 			font-weight: 600;
@@ -547,7 +565,11 @@ import Footer from "../components/Footer.astro";
 			}
 		}
 
-		@media (prefers-reduced-motion: reduce) {\n\t\t\t*, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }\n\t\t}\n\n\t\t@media (max-width: 850px) {
+		@media (prefers-reduced-motion: reduce) {
+\t\t\t*, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+\t\t}
+
+\t\t@media (max-width: 850px) {
 			.bg {
 				height: 120vh;
 			}
@@ -571,8 +593,12 @@ import Footer from "../components/Footer.astro";
 				width: 200px;
 				height: 200px;
 			}
-			.language-switcher { top: 66px; right: 10px; }\n\t\t\t.eyebrow { font-size: 0.7rem; }\n\t\t\t.hero-actions { justify-content: center; }\n\t\t	#Projects {
-				width: 95%;\n\t\t\t\tpadding: 22px 10px 4px;
+			.language-switcher { top: 66px; right: 10px; }
+\t\t\t.eyebrow { font-size: 0.7rem; }
+\t\t\t.hero-actions { justify-content: center; }
+\t\t	#Projects {
+				width: 95%;
+\t\t\t\tpadding: 22px 10px 4px;
 			}
 		}
 	</style>
